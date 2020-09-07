@@ -1,16 +1,21 @@
 import React from 'react';
-import { Image } from 'react-native';
+import { Image, TouchableWithoutFeedback } from 'react-native';
 
-export default function NavIcon({ icon, iconPosition }) {
+export default function NavIcon({ icon, iconPosition, onIconPressed }) {
 
 
     return (
-        <Image style={{
-            width: 32,
-            height: 35,
-            position: 'absolute',
-            bottom: 38,
-            [iconPosition]: iconPosition === 'alignSelf' ? 'center' : 15
-        }} source={icon} />
+        <TouchableWithoutFeedback onPress={() => onIconPressed(icon)}>
+            <Image style={{
+                width: 32,
+                height: 35,
+                position: 'absolute',
+                bottom: 38,
+                tintColor: '#2d4059',
+                [iconPosition]: iconPosition === 'alignSelf' ? 'center' : 20
+            }}
+                source={icon} />
+
+        </TouchableWithoutFeedback>
     );
 }
