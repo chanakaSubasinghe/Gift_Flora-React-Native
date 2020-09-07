@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, TouchableWithoutFeedback } from 'react-native';
+import { Image, TouchableWithoutFeedback, Platform } from 'react-native';
 
 export default function NavIcon({ icon, iconPosition, onIconPressed }) {
 
@@ -10,7 +10,7 @@ export default function NavIcon({ icon, iconPosition, onIconPressed }) {
                 width: 32,
                 height: 35,
                 position: 'absolute',
-                bottom: 38,
+                bottom: Platform.OS === 'ios' ? 38 : 20,
                 tintColor: '#2d4059',
                 [iconPosition]: iconPosition === 'alignSelf' ? 'center' : 20
             }}

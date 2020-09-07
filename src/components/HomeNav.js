@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, Platform } from 'react-native';
 
 import NavIcon from './NavIcon';
 
@@ -50,6 +50,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#ea5455',
         // backgroundColor: '#4ecdc4',
         width: '100%',
-        height: 80
+        height: Platform.OS === 'ios' ? 80 : 65
     }
 });
