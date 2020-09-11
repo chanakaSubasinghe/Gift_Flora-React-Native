@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Platform } from 'react-native';
+import { StyleSheet, View, Platform } from 'react-native';
 
 import NavIcon from './NavIcon';
 
@@ -8,7 +8,7 @@ import shoppingCartIcon from '../assets/shoppingCart.png';
 import userIcon from '../assets/user.png';
 
 
-export default function HomeNav() {
+export default function BottomNav() {
 
 
     function onIconPressed(icon) {
@@ -47,9 +47,10 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end'
     },
     navBar: {
-        backgroundColor: '#ea5455',
-        // backgroundColor: '#4ecdc4',
+        backgroundColor: '#fff',
         width: '100%',
-        height: Platform.OS === 'ios' ? 80 : 65
+        height: Platform.OS === 'ios' ? 80 : 65,
+        borderTopWidth: 0.5,
+        borderStartWidth: 2
     }
 });
