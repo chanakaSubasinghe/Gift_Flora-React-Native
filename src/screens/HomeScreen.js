@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Platform, StatusBar, StyleSheet, Text, View } from 'react-native';
 import uuid from 'uuid';
 
 export default function HomeScreen() {
@@ -29,7 +29,7 @@ export default function HomeScreen() {
         //     />
         // </View>
 
-        <View style={{ marginHorizontal: 20 }}>
+        <View style={{ marginHorizontal: 20, top: Platform.OS === 'android' && StatusBar.currentHeight }}>
 
             <View style={{
                 height: '7%',
