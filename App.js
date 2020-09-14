@@ -7,6 +7,7 @@ import ForgotPasswordScreen from './src/screens/member2/ForgotPasswordScreen';
 import LoginScreen from './src/screens/member2/LoginScreen';
 import RegisterScreen from './src/screens/member2/RegisterScreen';
 import HomeScreen from './src/screens/member3/HomeScreen';
+import ViewItemScreen from './src/screens/member3/ViewItemScreen';
 
 // importing components
 export default function App() {
@@ -15,8 +16,6 @@ export default function App() {
       <SafeAreaView style={styles.safeAreaView} />
 
       {/* --- Member 1 ---  */}
-
-      {/* <HomeScreen /> */}
 
 
       {/* --- Member 2 --- */}
@@ -28,7 +27,8 @@ export default function App() {
 
 
       {/* --- Member 3 --- */}
-
+      {/* <HomeScreen /> */}
+      <ViewItemScreen />
 
       {/* --- Member 4 --- */}
 
