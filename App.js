@@ -7,6 +7,7 @@ import ForgotPasswordScreen from './src/screens/member2/ForgotPasswordScreen';
 import LoginScreen from './src/screens/member2/LoginScreen';
 import RegisterScreen from './src/screens/member2/RegisterScreen';
 import HomeScreen from './src/screens/member3/HomeScreen';
+import MenuScreen from './src/screens/member3/MenuScreen';
 import PrivacyScreen from './src/screens/member3/PrivacyScreen';
 import ViewItemScreen from './src/screens/member3/ViewItemScreen';
 
@@ -30,7 +31,8 @@ export default function App() {
       {/* --- Member 3 --- */}
       {/* <HomeScreen /> */}
       {/* <ViewItemScreen /> */}
-      <PrivacyScreen />
+      {/* <PrivacyScreen /> */}
+      <MenuScreen />
 
       {/* --- Member 4 --- */}
 
