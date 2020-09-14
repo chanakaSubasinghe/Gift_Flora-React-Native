@@ -7,6 +7,7 @@ import ForgotPasswordScreen from './src/screens/member2/ForgotPasswordScreen';
 import LoginScreen from './src/screens/member2/LoginScreen';
 import RegisterScreen from './src/screens/member2/RegisterScreen';
 import HomeScreen from './src/screens/member3/HomeScreen';
+import PrivacyScreen from './src/screens/member3/PrivacyScreen';
 import ViewItemScreen from './src/screens/member3/ViewItemScreen';
 
 // importing components
@@ -28,7 +29,8 @@ export default function App() {
 
       {/* --- Member 3 --- */}
       {/* <HomeScreen /> */}
-      <ViewItemScreen />
+      {/* <ViewItemScreen /> */}
+      <PrivacyScreen />
 
       {/* --- Member 4 --- */}
 
