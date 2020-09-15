@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
+
 import React from 'react';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import BottomNav from './src/components/BottomNav';
@@ -22,14 +22,14 @@ export default function App() {
 
       {/* --- Member 2 --- */}
 
-      {/* <AboutScreen /> */}
+      <AboutScreen />
       {/* <RegisterScreen /> */}
       {/* <LoginScreen /> */}
       {/* <ForgotPasswordScreen /> */}
 
 
       {/* --- Member 3 --- */}
-      <HomeScreen />
+      {/* <HomeScreen /> */}
       {/* <ViewItemScreen /> */}
       {/* <PrivacyScreen /> */}
       {/* <MenuScreen /> */}
