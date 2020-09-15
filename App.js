@@ -21,14 +21,14 @@ export default function App() {
 
       {/* --- Member 2 --- */}
 
-      {/* <AboutScreen /> */}
+      <AboutScreen />
       {/* <RegisterScreen /> */}
       {/* <LoginScreen /> */}
       {/* <ForgotPasswordScreen /> */}
 
 
       {/* --- Member 3 --- */}
-      <HomeScreen />
+      {/* <HomeScreen /> */}
       {/* <ViewItemScreen /> */}
       {/* <PrivacyScreen /> */}
       {/* <MenuScreen /> */}
