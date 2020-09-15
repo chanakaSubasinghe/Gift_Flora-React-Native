@@ -29,10 +29,10 @@ export default function App() {
 
 
       {/* --- Member 3 --- */}
-      {/* <HomeScreen /> */}
+      <HomeScreen />
       {/* <ViewItemScreen /> */}
       {/* <PrivacyScreen /> */}
-      <MenuScreen />
+      {/* <MenuScreen /> */}
 
       {/* --- Member 4 --- */}
 

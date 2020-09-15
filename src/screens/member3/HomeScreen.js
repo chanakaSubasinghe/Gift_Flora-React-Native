@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FlatList, Platform, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Platform, StatusBar, StyleSheet, Text, View, ScrollView } from 'react-native';
+import { SearchBar, Icon, Card } from 'react-native-elements';
 import uuid from 'uuid';
 
 export default function HomeScreen() {
@@ -28,73 +29,78 @@ export default function HomeScreen() {
         //         renderItem={({ item }) => (<Text>{item.categoryName}</Text>)}
         //     />
         // </View>
-
-        <View style={{ marginHorizontal: 20, top: Platform.OS === 'android' && StatusBar.currentHeight }}>
-
-            <View style={{
-                height: '7%',
-                backgroundColor: 'gray',
-                marginVertical: 15
-            }} />
+        <ScrollView>
+            <View style={{ marginHorizontal: 20, top: Platform.OS === 'android' && StatusBar.currentHeight }}>
 
 
-            <View style={{
-                height: '20%',
-                backgroundColor: 'lightblue',
-                marginVertical: 15
-            }} />
+                <View style={{ marginTop: 15 }}>
+                    <SearchBar
+                        placeholder="Search..."
+                    />
+                </View>
 
-            <Text style={{ fontSize: 30, marginVertical: 15 }}>Categories</Text>
 
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginVertical: 20 }}>
-                <View style={{
-                    height: 60,
-                    width: 60,
-                    borderRadius: 100,
-                    backgroundColor: 'lightpink'
-                }} />
 
                 <View style={{
-                    height: 60,
-                    width: 60,
-                    borderRadius: 100,
-                    backgroundColor: 'lightpink'
+                    height: '20%',
+                    backgroundColor: 'lightblue',
+                    marginVertical: 15
                 }} />
 
-                <View style={{
-                    height: 60,
-                    width: 60,
-                    borderRadius: 100,
-                    backgroundColor: 'lightpink'
-                }} />
+                <Text style={{ fontSize: 30, marginVertical: 15 }}>Categories</Text>
 
-                <View style={{
-                    height: 60,
-                    width: 60,
-                    borderRadius: 100,
-                    backgroundColor: 'lightpink'
-                }} />
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginVertical: 20 }}>
+                    <View style={{
+                        height: 60,
+                        width: 60,
+                        borderRadius: 100,
+                        backgroundColor: 'lightpink'
+                    }} />
+
+                    <View style={{
+                        height: 60,
+                        width: 60,
+                        borderRadius: 100,
+                        backgroundColor: 'lightpink'
+                    }} />
+
+                    <View style={{
+                        height: 60,
+                        width: 60,
+                        borderRadius: 100,
+                        backgroundColor: 'lightpink'
+                    }} />
+
+                    <View style={{
+                        height: 60,
+                        width: 60,
+                        borderRadius: 100,
+                        backgroundColor: 'lightpink'
+                    }} />
+                </View>
+
+                <Text style={{ fontSize: 30, marginVertical: 15 }}>Most Popular</Text>
+
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginVertical: 20 }}>
+
+                    <View style={{
+                        height: 180,
+                        width: 170,
+                        borderRadius: 10,
+                        backgroundColor: 'orange'
+                    }} />
+
+                    <View style={{
+                        height: 180,
+                        width: 170,
+                        borderRadius: 10,
+                        backgroundColor: 'orange'
+                    }} />
+
+
+                </View>
             </View>
-
-            <Text style={{ fontSize: 30, marginVertical: 15 }}>Most Popular</Text>
-
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginVertical: 20 }}>
-
-                <View style={{
-                    height: 180,
-                    width: 170,
-                    borderRadius: 10,
-                    backgroundColor: 'orange'
-                }} />
-
-                <View style={{
-                    height: 180,
-                    width: 170,
-                    borderRadius: 10,
-                    backgroundColor: 'orange'
-                }} />
-            </View>
-        </View>
+        </ScrollView>
     );
 }
 
