@@ -1,42 +1,104 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, Image, Platform, StatusBar } from 'react-native';
 
+// URLs
+const profilePicture = "https://ik.imagekit.io/demo/img/smart_crop_blog/test_image_9_By_lQN-WE.jpeg?tr=w-200,h-200,fo-face:r-max";
+
+// Section component
+function Section({ heading, subheadings }) {
+    return (
+        <View>
+            <Text style={styles.sectionHeading}>{heading}</Text>
+            <Text style={styles.sectionSubHeading}>{subheadings[0]}</Text>
+            <Text style={styles.sectionSubHeading}>{subheadings[1]}</Text>
+            <Text style={styles.sectionSubHeading}>{subheadings[2]}</Text>
+        </View>
+    );
+}
+
+function LogoutButton() {
+    return (
+        <View style={styles.loginButton}>
+            <Button title="Logout" color="white" onPress={() => console.log('logout')} />
+        </View>
+    );
+}
 
 export default function MenuScreen() {
     return (
-        <View style={{ marginHorizontal: 20, top: Platform.OS === 'android' && StatusBar.currentHeight }}>
+        <View style={styles.container}>
 
-            <Text style={{ fontSize: 20, marginTop: 10 }}>Back</Text>
+            <Text style={styles.back}>{`< Back`}</Text>
 
-            <View style={{ alignItems: 'center', marginTop: 50 }}>
-                <View style={{ width: 150, height: 150, backgroundColor: 'lightblue' }}></View>
+            <View style={styles.imageContainer}>
+                <Image source={{ uri: profilePicture }}
+                    style={styles.profileImg}
+                />
 
-                <Text style={{ fontSize: 40, marginTop: 20 }}>John Smith</Text>
+                <Text style={styles.userName}>Nilanthi Perera</Text>
             </View>
 
-            <View>
-                <Text style={{ fontSize: 25, marginTop: 20, color: 'gray' }}>My Account</Text>
-                <Text style={{ fontSize: 25, marginTop: 20 }}>Account Settings</Text>
-                <Text style={{ fontSize: 25, marginTop: 10 }}>My Addresses</Text>
-                <Text style={{ fontSize: 25, marginTop: 10 }}>Change Password</Text>
-            </View>
+            <Section
+                heading="My Account"
+                subheadings={[
+                    'Account Settings',
+                    'My Addresses',
+                    'Change Password'
+                ]}
+            />
 
-            <View style={{ marginTop: 10 }}>
-                <Text style={{ fontSize: 25, marginTop: 20, color: 'gray' }}>Support</Text>
-                <Text style={{ fontSize: 25, marginTop: 20 }}>About GiftFlora</Text>
-                <Text style={{ fontSize: 25, marginTop: 10 }}>Privacy and Policy</Text>
-                <Text style={{ fontSize: 25, marginTop: 10 }}>Change Password</Text>
-            </View>
+            <Section
+                heading="Support"
+                subheadings={[
+                    'About GiftFlora',
+                    'Privacy and POlicy',
+                    'Test'
+                ]}
+            />
 
-            <View style={{ height: 40, width: 150, marginTop: 50, backgroundColor: 'darkred', borderRadius: 20, alignSelf: 'center' }}>
-                <Button title="Logout" color="white" onPress={() => console.log('reset')} />
-            </View>
+            <LogoutButton />
         </View>
     );
 }
 
 const styles = StyleSheet.create({
+    back: {
+        fontSize: 20,
+        marginTop: 10
+    },
     container: {
-        flex: 1
+        marginHorizontal: 20,
+        top: Platform.OS === 'android' ? StatusBar.currentHeight : null
+    },
+    profileImg: {
+        height: 150,
+        width: 150
+    },
+    sectionHeading: {
+        fontSize: 25,
+        marginTop: 30,
+        marginBottom: 20,
+        color: 'gray'
+    },
+    sectionSubHeading: {
+        fontSize: 20,
+        marginTop: 10
+    },
+    imageContainer: {
+        alignItems: 'center',
+        marginTop: 30
+    },
+    userName: {
+        fontSize: 40,
+        marginTop: 20
+    },
+    loginButton: {
+        height: 60,
+        width: 190,
+        marginTop: 35,
+        backgroundColor: 'crimson',
+        borderRadius: 20,
+        alignSelf: 'center',
+        justifyContent: 'center'
     }
 });

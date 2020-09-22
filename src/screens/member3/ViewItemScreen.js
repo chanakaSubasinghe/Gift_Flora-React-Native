@@ -26,11 +26,11 @@ export default function ViewItemScreen() {
              </Text>
 
             <View style={{ flexDirection: 'row', marginTop: 40 }}>
-                <View style={{ height: 40, width: 150, backgroundColor: 'lightblue', borderRadius: 20 }}>
+                <View style={{ height: 60, width: 150, backgroundColor: 'lightblue', borderRadius: 20, justifyContent: 'center' }}>
                     <Button title="Add to Cart" onPress={() => console.log('reset')} />
                 </View>
 
-                <View style={{ height: 40, width: 150, backgroundColor: 'lightpink', position: 'absolute', right: 20, borderRadius: 20 }}>
+                <View style={{ height: 60, width: 150, backgroundColor: 'lightpink', position: 'absolute', right: 20, borderRadius: 20, justifyContent: 'center' }}>
                     <Button title="Buy Now" onPress={() => console.log('reset')} />
                 </View>
             </View>

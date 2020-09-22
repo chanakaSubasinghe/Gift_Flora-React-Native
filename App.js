@@ -21,7 +21,7 @@ export default function App() {
 
       {/* --- Member 2 --- */}
 
-      <AboutScreen />
+      {/* <AboutScreen /> */}
       {/* <RegisterScreen /> */}
       {/* <LoginScreen /> */}
       {/* <ForgotPasswordScreen /> */}
@@ -31,7 +31,7 @@ export default function App() {
       {/* <HomeScreen /> */}
       {/* <ViewItemScreen /> */}
       {/* <PrivacyScreen /> */}
-      {/* <MenuScreen /> */}
+      <MenuScreen />
 
       {/* --- Member 4 --- */}
 
