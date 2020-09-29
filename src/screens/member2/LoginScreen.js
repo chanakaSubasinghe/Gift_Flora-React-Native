@@ -33,7 +33,7 @@ export default function LoginScreen() {
                 <Text style={{ marginTop: 40, fontSize: 20 }}>Not here before?</Text>
 
                 <View style={{ height: 40, width: '70%', backgroundColor: 'lightblue', marginTop: 20 }}>
-                    <Button title="SIGN UP" />
+                    <Button  title="SIGN UP" />
                 </View>
             </View>
         </View>
