@@ -9,6 +9,10 @@ import HomeScreen from './src/screens/member3/HomeScreen';
 import MenuScreen from './src/screens/member3/MenuScreen';
 import PrivacyScreen from './src/screens/member3/PrivacyScreen';
 import ViewItemScreen from './src/screens/member3/ViewItemScreen';
+import MyAccountScreen from './src/screens/member1/MyAccountScreen';
+import MyAddressScreen from './src/screens/member1/MyAddressScreen';
+import AddAddressScreen from './src/screens/member1/AddAddressScreen';
+import EditAddressScreen from './src/screens/member1/EditAddressScreen';
 
 // importing components
 export default function App() {
@@ -17,7 +21,10 @@ export default function App() {
       <SafeAreaView style={styles.safeAreaView} />
 
       {/* --- Member 1 ---  */}
-
+      {/* <MyAccountScreen /> */}
+      {/* <MyAddressScreen /> */}
+      {/* <AddAddressScreen /> */}
+      {/* <EditAddressScreen /> */}
 
       {/* --- Member 2 --- */}
 

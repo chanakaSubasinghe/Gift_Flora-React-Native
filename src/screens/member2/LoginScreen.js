@@ -48,11 +48,16 @@ export default function LoginScreen() {
                 <TouchableOpacity style={{width:200 , backgroundColor:'#b1006a' , borderRadius:28 , paddingVertical:12 }}>
                     <Text style={{fontSize:14, fontWeight:'500'  , color:'#ffffff' , textAlign:"center" }} >SIGN UP</Text>
                 </TouchableOpacity>
+            <View style={{ alignItems: 'center', marginTop: 70 }}>
+                <Text style={{ marginTop: 40, fontSize: 20 }}>Not here before?</Text>
+
+                <View style={{ height: 40, width: '70%', backgroundColor: 'lightblue', marginTop: 20 }}>
+                    <Button  title="SIGN UP" />
+                </View>
             </View>
+        </View>
         </View>
     );
 }
-
-
 
 const styles = StyleSheet.create({});
