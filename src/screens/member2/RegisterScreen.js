@@ -1,45 +1,75 @@
-import React from 'react';
-import { Button, StyleSheet, Text, View , StatusBar } from 'react-native';
 
-export default function RegisterScreen() {
+import React from 'react';
+import { StyleSheet, Text, View, Button,StatusBar , TextInput , TouchableOpacity } from 'react-native';
+import Logo from '../../components/Logo'
+
+
+export default class LoginScreen extends React.Component {
+
+    static navigationOptions = {
+        title: "Sign Up",
+    };
+    render(){
     return (
         <View style={{ marginHorizontal: 20, top: Platform.OS === 'android' && StatusBar.currentHeight }}>
+            
+            {/* Back button */}
+            <TouchableOpacity
+              title="Login"
+              onPress={() =>  this.props.navigation.navigate("Login")}>
+                    <Text style={{ fontSize: 20, marginTop: 10 }}> Back</Text>
+            </TouchableOpacity>
 
-            <Text style={{ fontSize: 20, marginTop: 10 }}>Back</Text>
-
-            <View style={{ alignItems: 'center', marginTop: 30 }}>
-                <Text style={{ fontSize: 40 }}>Hello !</Text>
-
-                <View style={{ width: 150, height: 150, backgroundColor: 'lightblue', marginTop: 10 }}></View>
+            <View style={{ alignItems: 'center', marginTop: 20 }}>
+                <Text style={{ fontSize: 30 , color:'#880061' , marginBottom:10}}> Welcome !</Text>
+                <Logo />
             </View>
+
+            {/* Username */}
             <View>
-                <Text style={{ fontSize: 20, marginTop: 30 }}>Username</Text>
-                <View style={{ height: 40, backgroundColor: 'lightgreen', marginTop: 10 }}></View>
+                <Text style={{ fontSize: 20, marginTop:10 , paddingHorizontal:15 }}>Username</Text>
+                <TextInput style={{width:350 , backgroundColor:'#fae4fc' , borderRadius:25 , height:45 , paddingHorizontal:16 , fontSize:16}} />
+               
             </View>
 
+             {/* E-mail */}
+             <View>
+                <Text style={{ fontSize: 20, marginTop:10 , paddingHorizontal:15 }}>E-mail</Text>
+                <TextInput style={{width:350 , backgroundColor:'#fae4fc' , borderRadius:25 , height:45 , paddingHorizontal:16 , fontSize:16}} />      
+            </View>
+
+            {/* Password */}
             <View>
-                <Text style={{ fontSize: 20, marginTop: 20 }}>Email</Text>
-                <View style={{ height: 40, backgroundColor: 'lightgreen', marginTop: 10 }}></View>
+                <Text style={{ fontSize: 20, marginTop: 10 , paddingHorizontal:15 }}>Password</Text>
+                <TextInput minLength={5} maxLength={15} secureTextEntry={true} style={{width:350 , backgroundColor:'#fae4fc' , borderRadius:25 , height:45 , paddingHorizontal:16 , fontSize:16}} />
             </View>
 
-            <View>
-                <Text style={{ fontSize: 20, marginTop: 20 }}>Password</Text>
-                <View style={{ height: 40, backgroundColor: 'lightgreen', marginTop: 10 }}></View>
+
+            {/* SignUp button*/}
+            <View style={{ height: 40, marginTop: 20 }}>
+                <TouchableOpacity style={{width:350 , backgroundColor:'#5d54a4' , borderRadius:25 , paddingVertical:12}}>
+                    <Text  style={{fontSize:20 , fontWeight:'500'  , color:'#ffffff' , textAlign:"center"}} >SIGN UP</Text>
+                </TouchableOpacity>
+               
             </View>
 
-            <View style={{ height: 40, backgroundColor: 'lightpink', marginTop: 20 }}>
-                <Button title="SIGN UP" />
-            </View>
-
-            <View style={{ alignItems: 'center' }}>
-                <Text style={{ marginTop: 40, fontSize: 20 }}>Already have an account?</Text>
-
-                <View style={{ height: 40, width: '70%', backgroundColor: 'lightpink', marginTop: 20 }}>
-                    <Button title="LOGIN" />
-                </View>
-            </View>
+ 
+            {/* Sign In */}
+            <View style={{ alignItems: 'center', marginTop:80 , justifyContent:'center', flexDirection:'row'  }}>
+                <Text style={{ alignItems: 'center', fontSize: 17 }}>Already have an account ? </Text>
+              
+                <TouchableOpacity 
+                    title="Sign Up"
+                    onPress={() =>  this.props.navigation.navigate("Login")}
+                    style={{width:100 , backgroundColor:'#b1006a' , borderRadius:28 , paddingVertical:10,alignItems: 'center' }}>
+                    <Text style={{fontSize:14, fontWeight:'500'  , color:'#ffffff' , textAlign:"center" }} >SIGN IN</Text>
+                </TouchableOpacity>
+         
+        </View>
+ 
         </View>
     );
+    }
 }
 
 const styles = StyleSheet.create({});

@@ -13,12 +13,15 @@ import MyAccountScreen from './src/screens/member1/MyAccountScreen';
 import MyAddressScreen from './src/screens/member1/MyAddressScreen';
 import AddAddressScreen from './src/screens/member1/AddAddressScreen';
 import EditAddressScreen from './src/screens/member1/EditAddressScreen';
+import Navigator from './src/routes/Stack'
 
 // importing components
 export default function App() {
   return (
     <View style={styles.container}>
       <SafeAreaView style={styles.safeAreaView} />
+
+      <Navigator />
 
       {/* --- Member 1 ---  */}
       {/* <MyAccountScreen /> */}
@@ -27,10 +30,10 @@ export default function App() {
       {/* <EditAddressScreen /> */}
 
       {/* --- Member 2 --- */}
-
-      {/* <AboutScreen /> */}
+      {/* 
+      <AboutScreen /> */}
       {/* <RegisterScreen /> */}
-      <LoginScreen />
+      {/* <LoginScreen /> */}
       {/* <ForgotPasswordScreen /> */}
 
 
@@ -41,6 +44,9 @@ export default function App() {
       {/* <MenuScreen /> */}
 
       {/* --- Member 4 --- */}
+
+   
+
 
       <BottomNav />
     </View>

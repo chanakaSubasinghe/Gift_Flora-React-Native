@@ -1,14 +1,24 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button,StatusBar , TextInput , TouchableOpacity } from 'react-native';
 import Logo from '../../components/Logo'
+import {} from 'react-navigation'
 
 
-export default function LoginScreen() {
+
+export default class LoginScreen extends React.Component {
+
+    static navigationOptions = {
+        title: "Login",
+    };
+   
+   render(){
     return (
+   
         <View style={{ marginHorizontal: 20, top: Platform.OS === 'android' && StatusBar.currentHeight }}>
             
+            {/* Back Button */}
             <TouchableOpacity>
-                    <Text style={{ fontSize: 20, marginTop: 10 }}> ⬅️Back</Text>
+                    <Text style={{ fontSize: 20, marginTop: 10 }}> Back</Text>
             </TouchableOpacity>
 
             <View style={{ alignItems: 'center', marginTop: 20 }}>
@@ -20,8 +30,8 @@ export default function LoginScreen() {
             <View>
                 <Text style={{ fontSize: 20, marginTop:30 , paddingHorizontal:15 }}>Username</Text>
                 <TextInput style={{width:350 , backgroundColor:'#fae4fc' , borderRadius:25 , height:45 , paddingHorizontal:16 , fontSize:16}} />
-                {/* <View style={{ height: 40, backgroundColor: 'lightgreen', marginTop: 10 }}></View> */}
             </View>
+
             {/* Password */}
             <View>
                 <Text style={{ fontSize: 20, marginTop: 10 , paddingHorizontal:15 }}>Password</Text>
@@ -29,35 +39,38 @@ export default function LoginScreen() {
             </View>
 
 
-            {/* Login */}
+            {/* Login Button */}
             <View style={{ height: 40, marginTop: 20 }}>
-                <TouchableOpacity style={{width:350 , backgroundColor:'#09af00' , borderRadius:25 , paddingVertical:12}}>
+                <TouchableOpacity style={{width:350 , backgroundColor:'#2ec1ac' , borderRadius:25 , paddingVertical:12}}>
                     <Text  style={{fontSize:20 , fontWeight:'500'  , color:'#ffffff' , textAlign:"center"}} >LOGIN</Text>
                 </TouchableOpacity>
+            {/* Forgot Screen Button */}
                 <View style={{ alignItems: 'center', marginTop: 10 }}>
-                    <TouchableOpacity>
+                    <TouchableOpacity 
+                     title="Forgot"
+                     onPress={() =>  this.props.navigation.navigate("Forgot")}>
                         <Text style={{ fontSize: 16, color: '#b1006a', textDecorationLine: 'underline' }}>forgot password ?</Text>
                     </TouchableOpacity>   
                 </View>
             </View>
 
  
-            {/* Sign Up */}
-            <View style={{ alignItems: 'center', marginTop:80 }}>
-                <Text style={{ marginTop: 40, fontSize: 15 }}>Not here before?</Text>
-                <TouchableOpacity style={{width:200 , backgroundColor:'#b1006a' , borderRadius:28 , paddingVertical:12 }}>
-                    <Text style={{fontSize:14, fontWeight:'500'  , color:'#ffffff' , textAlign:"center" }} >SIGN UP</Text>
+            {/* Sign Up Button */}
+            <View style={{ alignItems: 'center', marginTop:140 , justifyContent:'center', flexDirection:'row'  }}>
+                <Text style={{ alignItems: 'center', fontSize: 17 }}>Don't have an account yet? </Text>
+              
+                <TouchableOpacity  
+                        title="Sign Up"
+                        onPress={() =>  this.props.navigation.navigate("Register")}
+                        style={{width:100 , backgroundColor:'#b1006a' , borderRadius:28 , paddingVertical:10,alignItems: 'center' }}>
+                    <       Text style={{fontSize:14, fontWeight:'500'  , color:'#ffffff' , textAlign:"center" }} >SIGN UP</Text>
                 </TouchableOpacity>
-            <View style={{ alignItems: 'center', marginTop: 70 }}>
-                <Text style={{ marginTop: 40, fontSize: 20 }}>Not here before?</Text>
-
-                <View style={{ height: 40, width: '70%', backgroundColor: 'lightblue', marginTop: 20 }}>
-                    <Button  title="SIGN UP" />
-                </View>
-            </View>
+         
         </View>
+ 
         </View>
     );
+    }
 }
 
 const styles = StyleSheet.create({});
