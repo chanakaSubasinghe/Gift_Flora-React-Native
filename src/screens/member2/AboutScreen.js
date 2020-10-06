@@ -2,16 +2,19 @@ import React from 'react';
 import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import Logo from '../../components/Logo'
 
-export default function AboutScreen() {
+export default class AboutScreen extends React.Component{
+
+    render(){
     return (
         <View style={{ marginHorizontal: 20, top: Platform.OS === 'android' && StatusBar.currentHeight }}>
 
             {/* back button */}
             <TouchableOpacity
-              title="Login"
-              onPress={() =>  this.props.navigation.navigate("Login")}>
-                    <Text style={{ fontSize: 20, marginTop: 10 }}> Back</Text>
+                     title="Home"
+                     onPress={() =>  this.props.navigation.navigate("Home")}>
+                        <Text style={styles.backButton}> Back</Text>
             </TouchableOpacity>
+
 
             <View style={{ alignItems: 'center', marginTop: 20 }}>
                 <Text style={{ fontSize: 40 , color:'#880061' }}> who we are ?</Text>
@@ -35,6 +38,7 @@ export default function AboutScreen() {
             </View>
         </View>
     );
+    }
 }
 
 const styles = StyleSheet.create({});

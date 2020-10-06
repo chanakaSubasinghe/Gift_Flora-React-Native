@@ -44,10 +44,6 @@ export default function App() {
       {/* <MenuScreen /> */}
 
       {/* --- Member 4 --- */}
-
-   
-
-
       <BottomNav />
     </View>
   );
