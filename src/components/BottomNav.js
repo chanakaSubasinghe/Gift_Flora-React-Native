@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Platform } from 'react-native';
+import { StyleSheet, View, Platform, Button , TouchableOpacity } from 'react-native';
 
 import NavIcon from './NavIcon';
 
@@ -8,11 +8,18 @@ import shoppingCartIcon from '../assets/shoppingCart.png';
 import userIcon from '../assets/user.png';
 
 
-export default function BottomNav() {
 
+export default class BottomNav extends React.Component{
+
+    static navigationOptions ={
+        title:"BottomNav"
+    }
+
+    render(){
 
     function onIconPressed(icon) {
         console.log('icon pressed', icon);
+       
     }
 
     return (
@@ -30,15 +37,17 @@ export default function BottomNav() {
                     iconPosition="alignSelf"
                     onIconPressed={onIconPressed}
                 />
-
+       
                 <NavIcon
                     icon={userIcon}
                     iconPosition="right"
                     onIconPressed={onIconPressed}
                 />
+
             </View>
         </View>
     );
+    }
 }
 
 const styles = StyleSheet.create({
