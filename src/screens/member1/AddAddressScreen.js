@@ -69,7 +69,7 @@ export default class AddAddressScreen extends React.Component {
                                 title="Save"
                                 onPress={() => this.props.navigation.navigate("")}
                                 style={{ width: 100, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginLeft: 80 }}>
-                                <       Text style={{ fontSize: 14, fontWeight: '500', color: '#ffffff', textAlign: "center" }} >Save</Text>
+                                <Text style={{ fontSize: 14, fontWeight: '500', color: '#ffffff', textAlign: "center" }} >Save</Text>
                             </TouchableOpacity>
                         </View>
 
