@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Platform, Button , TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Platform, Button, TouchableOpacity } from 'react-native';
 
 import NavIcon from './NavIcon';
 
@@ -9,44 +9,44 @@ import userIcon from '../assets/user.png';
 
 
 
-export default class BottomNav extends React.Component{
+export default class BottomNav extends React.Component {
 
-    static navigationOptions ={
-        title:"BottomNav"
-    }
+    static navigationOptions = {
+        title: "BottomNav"
+    };
 
-    render(){
+    render() {
 
-    function onIconPressed(icon) {
-        console.log('icon pressed', icon);
-       
-    }
+        function onIconPressed(icon) {
+            console.log('icon pressed', icon);
 
-    return (
-        <View style={styles.container}>
-            <View style={styles.navBar}>
+        }
 
-                <NavIcon
-                    icon={homeIcon}
-                    iconPosition="left"
-                    onIconPressed={onIconPressed}
-                />
+        return (
+            <View style={styles.container}>
+                <View style={styles.navBar}>
 
-                <NavIcon
-                    icon={shoppingCartIcon}
-                    iconPosition="alignSelf"
-                    onIconPressed={onIconPressed}
-                />
-       
-                <NavIcon
-                    icon={userIcon}
-                    iconPosition="right"
-                    onIconPressed={onIconPressed}
-                />
+                    <NavIcon
+                        icon={homeIcon}
+                        iconPosition="left"
+                        onIconPressed={onIconPressed}
+                    />
 
+                    <NavIcon
+                        icon={shoppingCartIcon}
+                        iconPosition="alignSelf"
+                        onIconPressed={onIconPressed}
+                    />
+
+                    <NavIcon
+                        icon={userIcon}
+                        iconPosition="right"
+                        onIconPressed={() => this.props.navigation.navigate('Home')}
+                    />
+
+                </View>
             </View>
-        </View>
-    );
+        );
     }
 }
 
