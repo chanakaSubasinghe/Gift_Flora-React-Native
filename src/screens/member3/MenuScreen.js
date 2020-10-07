@@ -4,25 +4,6 @@ import { StyleSheet, Text, View, TouchableWithoutFeedback, Image, Platform, Stat
 // URLs
 const profilePicture = "https://ik.imagekit.io/demo/img/smart_crop_blog/test_image_9_By_lQN-WE.jpeg?tr=w-200,h-200,fo-face:r-max";
 
-// Section component
-// function Section({ heading, subheadings }) {
-//     return (
-//         <View>
-//             <Text style={styles.sectionHeading}>{heading}</Text>
-//             <Text style={styles.sectionSubHeading}>{subheadings[0]}</Text>
-//             <Text style={styles.sectionSubHeading}>{subheadings[1]}</Text>
-//             <Text style={styles.sectionSubHeading}>{subheadings[2]}</Text>
-//         </View>
-//     );
-// }
-
-// function LogoutButton() {
-//     return (
-//         <View style={styles.loginButton}>
-//             <Button title="Logout" color="white" onPress={() => console.log('logout')} />
-//         </View>
-//     );
-// }
 
 import userIcon from '../../assets/user.png';
 import homeIcon from '../../assets/home.png';

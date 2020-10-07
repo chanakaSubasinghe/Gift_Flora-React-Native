@@ -17,6 +17,7 @@ export default class HomeScreen extends React.Component {
         return (
 
             <>
+                       <ScrollView>
                 <View>
                     {/* Search Container */}
                     <View>
@@ -37,7 +38,7 @@ export default class HomeScreen extends React.Component {
                     </View>
 
                     {/* Category List */}
-                    <ScrollView>
+         
                         <View style={{ padding: 16 }}>
                             <Text style={{ fontSize: 22, fontWeight: 'bold' }}>Categories</Text>
                         </View>
@@ -86,12 +87,32 @@ export default class HomeScreen extends React.Component {
                                     <Text style={styles.popularPrice}>Rs 2000.00</Text>
                                 </View>
                             </TouchableOpacity>
-
                         </View>
 
-                    </ScrollView>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginVertical: 10 }}>
 
-                </View>
+                            <TouchableOpacity
+                                title="ViewItem"
+                                onPress={() => this.props.navigation.navigate("ViewItem")}>
+                                <View style={styles.popularContainer} >
+                                    <Image style={{ width: 100, height: 100, marginLeft: 35, marginTop: 20 }} source={require('../../assets/watch.jpg')} />
+                                    <Text style={styles.populatText}>Mens Rolex Watch</Text>
+                                    <Text style={styles.popularPrice}>Rs 50,000.00</Text>
+                                </View>
+                            </TouchableOpacity>
+
+                            <TouchableOpacity>
+                                <View style={styles.popularContainer} >
+                                    <Image style={{ width: 100, height: 100, marginLeft: 35, marginTop: 20 }} source={require('../../assets/jewellary.jpg')} />
+                                    <Text style={styles.populatText}>New Diamond</Text>
+                                    <Text style={styles.popularPrice}>Rs 200000.00</Text>
+                                </View>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={{ height: 80 }}></View>
+                      
+                    </View>
+                </ScrollView>
 
                 <View style={{ flex: 1, justifyContent: 'flex-end' }}>
                     <View style={{
@@ -142,7 +163,9 @@ export default class HomeScreen extends React.Component {
 
                         </TouchableWithoutFeedback>
                     </View>
+                  
                 </View>
+            
 
             </>
         );
