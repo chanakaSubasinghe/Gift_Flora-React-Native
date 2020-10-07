@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar, } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, TouchableOpacity, TouchableWithoutFeedback, Image } from 'react-native';
 
 
 import userIcon from '../../assets/user.png';
@@ -19,7 +19,7 @@ export default class PrivacyScreen extends React.Component {
                     <TouchableOpacity
                         title="Home"
                         onPress={() => this.props.navigation.navigate("Home")}>
-                        <Text style={styles.backButton}> Back</Text>
+                        <Text style={styles.backButton}>{`< Back`}</Text>
                     </TouchableOpacity>
 
                     <View style={{ alignItems: 'center', marginTop: 30 }}>
@@ -28,7 +28,7 @@ export default class PrivacyScreen extends React.Component {
 
                     <Text style={styles.updateDate}>
                         Last updated [5 , October , 2020]
-             </Text>
+                    </Text>
 
                     <Text style={styles.privayText}>
                         Gift Flora respects the privacy of our users .
@@ -37,7 +37,7 @@ export default class PrivacyScreen extends React.Component {
                         Gift Flora. Please read this Privacy Policy carefully.
                         IF YOU DO NOT AGREE WITH THE TERMS OF THIS PRIVACY POLICY,
                         PLEASE DO NOT ACCESS THE APPLICATION.
-             </Text>
+                    </Text>
 
                     <Text style={styles.privayText}>
                         We reserve the right to make changes to this
@@ -47,57 +47,7 @@ export default class PrivacyScreen extends React.Component {
                         You will be deemed to have been made aware of, will be subject to, and will be deemed to have accepted
                         the changes in any revised Privacy Policy by your continued use of the Application after the date
                         such revised Privacy Policy is posted.
-             </Text>
-                </View>
-                <View style={{ flex: 1, justifyContent: 'flex-end' }}>
-                    <View style={{
-                        backgroundColor: '#fff',
-                        width: '100%',
-                        height: Platform.OS === 'ios' ? 80 : 65,
-                        borderTopWidth: 0.5
-                    }}>
-
-                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}>
-                            <Image style={{
-                                width: 32,
-                                height: 35,
-                                position: 'absolute',
-                                bottom: Platform.OS === 'ios' ? 38 : 20,
-                                tintColor: '#5f4b8bff',
-                                left: 20
-                            }}
-                                source={homeIcon} />
-
-                        </TouchableWithoutFeedback>
-
-
-                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}>
-                            <Image style={{
-                                width: 32,
-                                height: 35,
-                                position: 'absolute',
-                                bottom: Platform.OS === 'ios' ? 38 : 20,
-                                tintColor: '#5f4b8bff',
-                                alignSelf: 'center'
-                            }}
-                                source={shoppingCartIcon} />
-
-                        </TouchableWithoutFeedback>
-
-
-                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Menu')}>
-                            <Image style={{
-                                width: 32,
-                                height: 35,
-                                position: 'absolute',
-                                bottom: Platform.OS === 'ios' ? 38 : 20,
-                                tintColor: '#5f4b8bff',
-                                right: 20
-                            }}
-                                source={userIcon} />
-
-                        </TouchableWithoutFeedback>
-                    </View>
+                    </Text>
                 </View>
             </>
         );
@@ -105,17 +55,22 @@ export default class PrivacyScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
+    backButton: {
+        fontSize: 20,
+        marginTop: 10
+    },
     mainText: {
         fontSize: 30,
         color: '#880061',
+        marginTop: 15
     },
     updateDate: {
-        marginTop: 20,
+        marginTop: 30,
         fontSize: 18,
         fontWeight: 'bold'
     },
     privayText: {
-        marginTop: 10,
+        marginTop: 30,
         fontSize: 17
     }
 });

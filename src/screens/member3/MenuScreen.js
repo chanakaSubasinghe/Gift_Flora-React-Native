@@ -21,12 +21,6 @@ export default class MenuScreen extends React.Component {
             <>
                 <View style={styles.container}>
 
-                    <TouchableOpacity
-                        title="Home"
-                        onPress={() => this.props.navigation.navigate("Home")}>
-                        <Text style={styles.backButton}> Back</Text>
-                    </TouchableOpacity>
-
                     <View style={styles.imageContainer}>
                         <Image source={profilePicture}
                             style={styles.profileImg}
@@ -127,13 +121,9 @@ export default class MenuScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    backButton: {
-        fontSize: 20,
-        marginTop: 10
-    },
     container: {
         marginHorizontal: 20,
-        top: Platform.OS === 'android' ? StatusBar.currentHeight : null
+        top: 40
     },
     profileImg: {
         height: 150,
