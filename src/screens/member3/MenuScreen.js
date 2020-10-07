@@ -29,10 +29,14 @@ export default class MenuScreen extends React.Component {
                     </View>
 
                     <Text style={styles.sectionHeading}>My Account</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                        title="MyAccount"
+                        onPress={() => this.props.navigation.navigate("MyAccount")}>
                         <Text style={styles.sectionSubHeading}>Account Settings</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                        title="MyAddress"
+                        onPress={() => this.props.navigation.navigate("MyAddress")}>
                         <Text style={styles.sectionSubHeading}>My Addresses</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
@@ -51,6 +55,11 @@ export default class MenuScreen extends React.Component {
                         title="Privacy"
                         onPress={() => this.props.navigation.navigate("Privacy")}>
                         <Text style={styles.sectionSubHeading}>Privacy and Policy</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        title="Contact"
+                        onPress={() => this.props.navigation.navigate("Contact")}>
+                        <Text style={styles.sectionSubHeading}>Contact Us</Text>
                     </TouchableOpacity>
 
 
@@ -74,9 +83,18 @@ export default class MenuScreen extends React.Component {
                             <Image style={[styles.navBarIcon, { left: 20 }]} source={homeIcon} />
                         </TouchableWithoutFeedback>
 
-                        <TouchableWithoutFeedback
-                            onPress={() => this.props.navigation.navigate('Home')}>
-                            <Image style={[styles.navBarIcon, { alignSelf: 'center' }]} source={shoppingCartIcon} />
+
+                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ShoppingCart')}>
+                            <Image style={{
+                                width: 32,
+                                height: 35,
+                                position: 'absolute',
+                                bottom: Platform.OS === 'ios' ? 38 : 20,
+                                tintColor: '#5f4b8bff',
+                                alignSelf: 'center'
+                            }}
+                                source={shoppingCartIcon} />
+
                         </TouchableWithoutFeedback>
 
                         <TouchableWithoutFeedback

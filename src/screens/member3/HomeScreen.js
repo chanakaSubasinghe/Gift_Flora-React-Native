@@ -131,11 +131,18 @@ export default class HomeScreen extends React.Component {
                             <Image style={[styles.navBarIcon, { left: 20 }]} source={homeIcon} />
                         </TouchableWithoutFeedback>
 
-                        <TouchableWithoutFeedback
-                            onPress={() => this.props.navigation.navigate('Home')}>
-                            <Image style={[styles.navBarIcon, { alignSelf: 'center' }]} source={shoppingCartIcon} />
-                        </TouchableWithoutFeedback>
 
+                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ShoppingCart')}>
+                            <Image style={{
+                                width: 32,
+                                height: 35,
+                                position: 'absolute',
+                                bottom: Platform.OS === 'ios' ? 38 : 20,
+                                tintColor: '#5f4b8bff',
+                                alignSelf: 'center'
+                            }}
+                                source={shoppingCartIcon} />
+                        </TouchableWithoutFeedback>
                         <TouchableWithoutFeedback
                             onPress={() => this.props.navigation.navigate('Menu')}>
                             <Image style={[styles.navBarIcon, { right: 20 }]} source={userIcon} />

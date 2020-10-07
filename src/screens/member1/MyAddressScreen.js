@@ -1,13 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, TouchableWithoutFeedback, TouchableOpacity, Image } from 'react-native';
 import { } from 'react-navigation'
+
+import userIcon from '../../assets/user.png';
+import homeIcon from '../../assets/home.png';
+import shoppingCartIcon from '../../assets/shoppingCart.png';
 
 export default class MyAccountScreen extends React.Component {
     render() {
         return (
             <View style={{ marginHorizontal: 20, top: Platform.OS === 'android' && StatusBar.currentHeight }}>
                 <View style={{ alignItems: 'center', marginTop: 30 }}>
-                    <Text style={{ fontSize: 20, marginTop: 10, fontWeight: 'bold' }}>MY ADDRESSES</Text>
+                    <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#07689f' }}>MY ADDRESSES</Text>
                 </View>
 
                 <View style={shadowstyles.boxWithShadow} >
@@ -34,13 +38,13 @@ export default class MyAccountScreen extends React.Component {
                         <TouchableOpacity
                             title="Edit"
                             onPress={() => this.props.navigation.navigate("EditAddress")}
-                            style={{ width: 100, backgroundColor: '#50bda1', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginRight: 20, marginBottom: 2 }}>
+                            style={{ width: 100, backgroundColor: 'green', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginRight: 20, marginBottom: 2 }}>
                             <       Text style={{ fontSize: 14, fontWeight: '500', color: '#ffffff', textAlign: "center" }} >EDIT</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                             title="Delete"
                             onPress={() => this.props.navigation.navigate("")}
-                            style={{ width: 100, backgroundColor: '#c81912', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginRight: 2, marginBottom: 2 }}>
+                            style={{ width: 100, backgroundColor: '#c81912', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginRight: 20, marginBottom: 2 }}>
                             <       Text style={{ fontSize: 14, fontWeight: '500', color: '#ffffff', textAlign: "center" }} >DELETE</Text>
                         </TouchableOpacity>
                     </View>
@@ -50,18 +54,71 @@ export default class MyAccountScreen extends React.Component {
                     <TouchableOpacity
                         title="MyAccount"
                         onPress={() => this.props.navigation.navigate("MyAccount")}
-                        style={{ width: 100, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginLeft: 20 }}>
-                        <       Text style={{ fontSize: 14, fontWeight: '500', color: '#ffffff', textAlign: "center" }} >My Account</Text>
+                        style={{ width: 100, backgroundColor: '#f96d80', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginLeft: 20 }}>
+                        <       Text style={{ fontSize: 14, fontWeight: 'bold', color: '#ffffff', textAlign: "center" }} >My Account</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         title="shop"
-                        onPress={() => this.props.navigation.navigate("")}
-                        style={{ width: 100, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginRight: 20 }}>
-                        <       Text style={{ fontSize: 14, fontWeight: '500', color: '#ffffff', textAlign: "center" }} >Shop</Text>
+                        onPress={() => this.props.navigation.navigate("Home")}
+                        style={{ width: 100, backgroundColor: '#f96d80', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginRight: 20 }}>
+                        <       Text style={{ fontSize: 14, fontWeight: 'bold', color: '#ffffff', textAlign: "center" }} >Shop</Text>
                     </TouchableOpacity>
                 </View>
 
+                <View style={{  marginTop: 25, marginHorizontal: -19 }}>
+                    <View style={{
+                        backgroundColor: '#fff',
+                        width: '100%',
+                        height: Platform.OS === 'ios' ? 80 : 65,
+                        borderTopWidth: 0.5,
+                    }}>
+
+                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}>
+                            <Image style={{
+                                width: 32,
+                                height: 35,
+                                position: 'absolute',
+                                bottom: Platform.OS === 'ios' ? 38 : 20,
+                                tintColor: '#5f4b8bff',
+                                left: 20
+                            }}
+                                source={homeIcon} />
+
+                        </TouchableWithoutFeedback>
+
+
+                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ShoppingCart')}>
+                            <Image style={{
+                                width: 32,
+                                height: 35,
+                                position: 'absolute',
+                                bottom: Platform.OS === 'ios' ? 38 : 20,
+                                tintColor: '#5f4b8bff',
+                                alignSelf: 'center'
+                            }}
+                                source={shoppingCartIcon} />
+
+                        </TouchableWithoutFeedback>
+
+
+                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Menu')}>
+                            <Image style={{
+                                width: 32,
+                                height: 35,
+                                position: 'absolute',
+                                bottom: Platform.OS === 'ios' ? 38 : 20,
+                                tintColor: '#5f4b8bff',
+                                right: 20
+                            }}
+                                source={userIcon} />
+
+                        </TouchableWithoutFeedback>
+                    </View>
+                </View>
+
             </View>
+
+
         )
     }
 }
@@ -69,19 +126,20 @@ const styles = StyleSheet.create({});
 
 const shadowstyles = StyleSheet.create({
     boxWithShadow: {
-        marginTop: 30,
+        marginTop: 10,
         shadowColor: 'black',
         shadowOffset: { width: 1, height: 1 },
         shadowOpacity: 0.5,
         shadowRadius: 3.25,
         elevation: 25,
-        backgroundColor: '#f4f4f4',
-        paddingStart: 10
+        backgroundColor: '#f7f7f7',
+        paddingStart: 10,
+        height: 555
     },
     buttonStyle: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginTop: 10,
+        marginTop: 20,
         color: 'black'
     }
 });
