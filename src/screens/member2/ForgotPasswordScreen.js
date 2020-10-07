@@ -1,13 +1,9 @@
-
 import React from 'react';
 import {
     StyleSheet,
     Text,
     View,
-    TouchableWithoutFeedback,
-    StatusBar,
     TextInput,
-    Image,
     TouchableOpacity
 } from 'react-native';
 import Logo from '../../components/Logo';

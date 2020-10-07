@@ -14,6 +14,11 @@ import MyAddressScreen from './src/screens/member1/MyAddressScreen';
 import AddAddressScreen from './src/screens/member1/AddAddressScreen';
 import EditAddressScreen from './src/screens/member1/EditAddressScreen';
 import Navigator from './src/routes/Stack';
+import OrderListScreen from './src/screens/member4/OrderListScreen';
+import ShoppingCartScreen from './src/screens/member4/ShoppingCartScreen';
+import ContactScreen from './src/screens/member4/ContactScreen';
+import LeaveFeedbackScreen from './src/screens/member4/LeaveFeedbackScreen';
+
 
 // importing components
 export default function App() {
@@ -21,7 +26,7 @@ export default function App() {
     <View style={styles.container}>
       <SafeAreaView style={styles.safeAreaView} />
 
-      <Navigator />
+    {/* <Navigator /> */}
 
       {/* --- Member 1 ---  */}
       {/* <MyAccountScreen /> */}
@@ -44,6 +49,12 @@ export default function App() {
       {/* <MenuScreen /> */}
 
       {/* --- Member 4 --- */}
+      {/* <OrderListScreen/> */}
+      {/* <ShoppingCartScreen/>  */}
+      {/* <ContactScreen/> */}
+      <LeaveFeedbackScreen/>
+
+      <BottomNav />
     </View>
   );
 }
