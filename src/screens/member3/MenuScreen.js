@@ -1,68 +1,152 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Image, Platform, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, TouchableWithoutFeedback, Image, Platform, StatusBar, TouchableOpacity } from 'react-native';
 
 // URLs
 const profilePicture = "https://ik.imagekit.io/demo/img/smart_crop_blog/test_image_9_By_lQN-WE.jpeg?tr=w-200,h-200,fo-face:r-max";
 
 // Section component
-function Section({ heading, subheadings }) {
-    return (
-        <View>
-            <Text style={styles.sectionHeading}>{heading}</Text>
-            <Text style={styles.sectionSubHeading}>{subheadings[0]}</Text>
-            <Text style={styles.sectionSubHeading}>{subheadings[1]}</Text>
-            <Text style={styles.sectionSubHeading}>{subheadings[2]}</Text>
-        </View>
-    );
-}
+// function Section({ heading, subheadings }) {
+//     return (
+//         <View>
+//             <Text style={styles.sectionHeading}>{heading}</Text>
+//             <Text style={styles.sectionSubHeading}>{subheadings[0]}</Text>
+//             <Text style={styles.sectionSubHeading}>{subheadings[1]}</Text>
+//             <Text style={styles.sectionSubHeading}>{subheadings[2]}</Text>
+//         </View>
+//     );
+// }
 
-function LogoutButton() {
-    return (
-        <View style={styles.loginButton}>
-            <Button title="Logout" color="white" onPress={() => console.log('logout')} />
-        </View>
-    );
-}
+// function LogoutButton() {
+//     return (
+//         <View style={styles.loginButton}>
+//             <Button title="Logout" color="white" onPress={() => console.log('logout')} />
+//         </View>
+//     );
+// }
 
-export default function MenuScreen() {
-    return (
-        <View style={styles.container}>
+import userIcon from '../../assets/user.png';
+import homeIcon from '../../assets/home.png';
+import shoppingCartIcon from '../../assets/shoppingCart.png';
 
-            <Text style={styles.back}>{`< Back`}</Text>
+export default class MenuScreen extends React.Component {
 
-            <View style={styles.imageContainer}>
-                <Image source={{ uri: profilePicture }}
-                    style={styles.profileImg}
-                />
 
-                <Text style={styles.userName}>Nilanthi Perera</Text>
-            </View>
+    static navigationOptions = {
+        title: "Menu",
+    };
 
-            <Section
-                heading="My Account"
-                subheadings={[
-                    'Account Settings',
-                    'My Addresses',
-                    'Change Password'
-                ]}
-            />
+    render() {
+        return (
+            <>
+                <View style={styles.container}>
 
-            <Section
-                heading="Support"
-                subheadings={[
-                    'About GiftFlora',
-                    'Privacy and POlicy',
-                    'Test'
-                ]}
-            />
+                    <TouchableOpacity
+                        title="Home"
+                        onPress={() => this.props.navigation.navigate("Home")}>
+                        <Text style={styles.backButton}> Back</Text>
+                    </TouchableOpacity>
 
-            <LogoutButton />
-        </View>
-    );
+                    <View style={styles.imageContainer}>
+                        <Image source={{ uri: profilePicture }}
+                            style={styles.profileImg}
+                        />
+                        <Text style={styles.userName}>Nilanthi Perera</Text>
+                    </View>
+
+                    <Text style={styles.sectionHeading}>My Account</Text>
+                    <TouchableOpacity>
+                        <Text style={styles.sectionSubHeading}>Account Settings</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Text style={styles.sectionSubHeading}>My Addresses</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        title="Forgot"
+                        onPress={() => this.props.navigation.navigate("Forgot")}>
+                        <Text style={styles.sectionSubHeading}>Reset Password</Text>
+                    </TouchableOpacity>
+
+                    <Text style={styles.sectionHeading}>Support</Text>
+                    <TouchableOpacity
+                        title="About"
+                        onPress={() => this.props.navigation.navigate("About")}>
+                        <Text style={styles.sectionSubHeading}>About Gift Flora</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        title="Privacy"
+                        onPress={() => this.props.navigation.navigate("Privacy")}>
+                        <Text style={styles.sectionSubHeading}>Privacy and Policy</Text>
+                    </TouchableOpacity>
+
+
+                    <TouchableOpacity style={styles.loginButton}
+                        title="Login"
+                        onPress={() => this.props.navigation.navigate("Login")}>
+                        <Text style={{ fontSize: 20, fontWeight: '500', color: '#ffffff', textAlign: "center" }} >LOGOUT</Text>
+                    </TouchableOpacity>
+
+
+
+
+                </View>
+
+                <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+                    <View style={{
+                        backgroundColor: '#fff',
+                        width: '100%',
+                        height: Platform.OS === 'ios' ? 80 : 65,
+                        borderTopWidth: 0.5
+                    }}>
+
+                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}>
+                            <Image style={{
+                                width: 32,
+                                height: 35,
+                                position: 'absolute',
+                                bottom: Platform.OS === 'ios' ? 38 : 20,
+                                tintColor: '#5f4b8bff',
+                                left: 20
+                            }}
+                                source={homeIcon} />
+
+                        </TouchableWithoutFeedback>
+
+
+                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}>
+                            <Image style={{
+                                width: 32,
+                                height: 35,
+                                position: 'absolute',
+                                bottom: Platform.OS === 'ios' ? 38 : 20,
+                                tintColor: '#5f4b8bff',
+                                alignSelf: 'center'
+                            }}
+                                source={shoppingCartIcon} />
+
+                        </TouchableWithoutFeedback>
+
+
+                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Menu')}>
+                            <Image style={{
+                                width: 32,
+                                height: 35,
+                                position: 'absolute',
+                                bottom: Platform.OS === 'ios' ? 38 : 20,
+                                tintColor: '#5f4b8bff',
+                                right: 20
+                            }}
+                                source={userIcon} />
+
+                        </TouchableWithoutFeedback>
+                    </View>
+                </View>
+            </>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
-    back: {
+    backButton: {
         fontSize: 20,
         marginTop: 10
     },
@@ -76,26 +160,29 @@ const styles = StyleSheet.create({
     },
     sectionHeading: {
         fontSize: 25,
-        marginTop: 30,
-        marginBottom: 20,
-        color: 'gray'
+        marginTop: 20,
+        marginBottom: 5,
+        color: 'gray',
+
     },
     sectionSubHeading: {
         fontSize: 20,
         marginTop: 10
+
     },
     imageContainer: {
         alignItems: 'center',
         marginTop: 30
     },
     userName: {
-        fontSize: 40,
-        marginTop: 20
+        fontSize: 30,
+        marginTop: 20,
+        fontWeight: 'bold'
     },
     loginButton: {
-        height: 60,
+        height: 50,
         width: 190,
-        marginTop: 35,
+        marginTop: 25,
         backgroundColor: 'crimson',
         borderRadius: 20,
         alignSelf: 'center',

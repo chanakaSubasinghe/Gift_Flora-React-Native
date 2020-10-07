@@ -5,7 +5,7 @@ export default function NavIcon({ icon, iconPosition, onIconPressed }) {
 
 
     return (
-        <TouchableWithoutFeedback onPress={() => onIconPressed(icon)}>
+        <TouchableWithoutFeedback onPress={() => onIconPressed()}>
             <Image style={{
                 width: 32,
                 height: 35,

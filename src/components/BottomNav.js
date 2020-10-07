@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Platform } from 'react-native';
+import { StyleSheet, View, Platform, Button, TouchableOpacity } from 'react-native';
 
 import NavIcon from './NavIcon';
 
@@ -8,37 +8,46 @@ import shoppingCartIcon from '../assets/shoppingCart.png';
 import userIcon from '../assets/user.png';
 
 
-export default function BottomNav() {
 
+export default class BottomNav extends React.Component {
 
-    function onIconPressed(icon) {
-        console.log('icon pressed', icon);
-    }
+    static navigationOptions = {
+        title: "BottomNav"
+    };
 
-    return (
-        <View style={styles.container}>
-            <View style={styles.navBar}>
+    render() {
 
-                <NavIcon
-                    icon={homeIcon}
-                    iconPosition="left"
-                    onIconPressed={onIconPressed}
-                />
+        function onIconPressed(icon) {
+            console.log('icon pressed', icon);
 
-                <NavIcon
-                    icon={shoppingCartIcon}
-                    iconPosition="alignSelf"
-                    onIconPressed={onIconPressed}
-                />
+        }
 
-                <NavIcon
-                    icon={userIcon}
-                    iconPosition="right"
-                    onIconPressed={onIconPressed}
-                />
+        return (
+            <View style={styles.container}>
+                <View style={styles.navBar}>
+
+                    <NavIcon
+                        icon={homeIcon}
+                        iconPosition="left"
+                        onIconPressed={onIconPressed}
+                    />
+
+                    <NavIcon
+                        icon={shoppingCartIcon}
+                        iconPosition="alignSelf"
+                        onIconPressed={onIconPressed}
+                    />
+
+                    <NavIcon
+                        icon={userIcon}
+                        iconPosition="right"
+                        onIconPressed={() => this.props.navigation.navigate('Home')}
+                    />
+
+                </View>
             </View>
-        </View>
-    );
+        );
+    }
 }
 
 const styles = StyleSheet.create({

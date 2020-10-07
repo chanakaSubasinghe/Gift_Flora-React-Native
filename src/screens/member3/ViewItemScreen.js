@@ -1,41 +1,154 @@
 import React from 'react';
-import { StyleSheet, Text, View, Platform, Button } from 'react-native';
+import { StyleSheet, Text, View, Platform, TouchableWithoutFeedback, StatusBar, Image, ScrollView } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function ViewItemScreen() {
-    return (
-        <View style={{ marginHorizontal: 20, top: Platform.OS === 'android' && StatusBar.currentHeight }}>
 
-            <Text style={{ fontSize: 20, marginTop: 10 }}>Back</Text>
+import userIcon from '../../assets/user.png';
+import homeIcon from '../../assets/home.png';
+import shoppingCartIcon from '../../assets/shoppingCart.png';
 
-            <View style={{ height: 300, backgroundColor: 'brown', marginTop: 20 }}></View>
+export default class ViewItemScreen extends React.Component {
 
-            <Text style={{ fontSize: 20, marginTop: 20 }}>Rs. 1500</Text>
+    static navigationOptions = {
+        title: "ViewItem"
+    };
+    render() {
+        return (
+            <>
+                <View style={{ marginHorizontal: 20 }}>
 
-            <Text style={{ fontSize: 30, marginTop: 10, color: 'gray' }}>Bouquet of Bouquets</Text>
+                    <ScrollView >
 
-            <Text style={{ fontSize: 40, marginTop: 20 }}>Description</Text>
+                        <TouchableOpacity
+                            title="Home"
+                            onPress={() => this.props.navigation.navigate("Home")}>
+                            <Text style={styles.backButton}> Back</Text>
+                        </TouchableOpacity>
 
-            <Text style={{ marginTop: 10, fontSize: 15 }}>Lorem Ipsum is simply dummy text of
-            the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard
-            dummy text ever since the 1500s, when an unknown
-            printer took a galley of type and scrambled it
-            to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic
-            typesetting, remaining essentially unchanged.
-             </Text>
+                        <Image style={styles.image} source={require('../../assets/choco.jpg')} />
 
-            <View style={{ flexDirection: 'row', marginTop: 40 }}>
-                <View style={{ height: 60, width: 150, backgroundColor: 'lightblue', borderRadius: 20, justifyContent: 'center' }}>
-                    <Button title="Add to Cart" onPress={() => console.log('reset')} />
+                        <Text style={styles.price}>Rs. 1500</Text>
+
+                        <Text style={styles.heading}>Chocolate Fudge Cake</Text>
+
+                        <Text style={styles.desHeading}>Description</Text>
+
+                        <Text style={styles.description}>A chocolate Fudge cake is a cake made with
+                        chocolate or cocoa. The ingredients are put into a bowl and mixed together; then the
+                        mixed ingredients are put into a cake tin and put
+                        in an oven until it is fully cooked.
+                </Text>
+
+                        <View style={{ flexDirection: 'row', marginTop: 10, justifyContent: 'space-between' }}>
+                            <TouchableOpacity>
+                                <View style={{ height: 50, width: 150, backgroundColor: '#7579e7', borderRadius: 20, justifyContent: 'center', marginLeft: 10 }}>
+                                    <Text style={{ textAlign: 'center', color: 'white', fontSize: 18, fontWeight: 'bold', }}> 🛒 Add to Cart</Text>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <View style={{ height: 50, width: 150, backgroundColor: '#ffd57e', borderRadius: 20, justifyContent: 'center' }}>
+                                    <Text style={{ textAlign: 'center', color: 'white', fontSize: 18, fontWeight: 'bold', }}>💲 Buy Now</Text>
+                                </View>
+                            </TouchableOpacity>
+                        </View>
+
+                        <View style={{ height: 80 }}></View>
+
+                    </ScrollView>
+
                 </View>
 
-                <View style={{ height: 60, width: 150, backgroundColor: 'lightpink', position: 'absolute', right: 20, borderRadius: 20, justifyContent: 'center' }}>
-                    <Button title="Buy Now" onPress={() => console.log('reset')} />
+                <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+                    <View style={{
+                        backgroundColor: '#fff',
+                        width: '100%',
+                        height: Platform.OS === 'ios' ? 80 : 65,
+                        borderTopWidth: 0.5
+                    }}>
+
+                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}>
+                            <Image style={{
+                                width: 32,
+                                height: 35,
+                                position: 'absolute',
+                                bottom: Platform.OS === 'ios' ? 38 : 20,
+                                tintColor: '#5f4b8bff',
+                                left: 20
+                            }}
+                                source={homeIcon} />
+
+                        </TouchableWithoutFeedback>
+
+
+                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}>
+                            <Image style={{
+                                width: 32,
+                                height: 35,
+                                position: 'absolute',
+                                bottom: Platform.OS === 'ios' ? 38 : 20,
+                                tintColor: '#5f4b8bff',
+                                alignSelf: 'center'
+                            }}
+                                source={shoppingCartIcon} />
+
+                        </TouchableWithoutFeedback>
+
+
+                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Menu')}>
+                            <Image style={{
+                                width: 32,
+                                height: 35,
+                                position: 'absolute',
+                                bottom: Platform.OS === 'ios' ? 38 : 20,
+                                tintColor: '#5f4b8bff',
+                                right: 20
+                            }}
+                                source={userIcon} />
+
+                        </TouchableWithoutFeedback>
+                    </View>
                 </View>
-            </View>
-        </View>
-    );
+
+            </>
+        );
+    }
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    backButton: {
+        fontSize: 20,
+        marginTop: 30
+    },
+
+    image: {
+        height: 350,
+        width: 350,
+        alignContent: 'center',
+        marginTop: 10
+    },
+    price: {
+        fontSize: 20,
+        marginTop: 20,
+        backgroundColor: '#ffefa0',
+
+        padding: 10,
+        width: 120,
+        color: '#d7385e',
+        fontWeight: 'bold',
+        textAlign: 'center'
+    },
+    heading: {
+        fontSize: 30,
+        marginTop: 10,
+        color: 'gray'
+    },
+    desHeading: {
+        fontSize: 20,
+        marginTop: 20,
+        fontWeight: 'bold'
+    },
+    description: {
+        marginTop: 10,
+        fontSize: 15
+    }
+});
