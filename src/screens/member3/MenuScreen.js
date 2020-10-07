@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableWithoutFeedback, Image, Platform, StatusBar, TouchableOpacity } from 'react-native';
 
 // URLs
-const profilePicture = "https://ik.imagekit.io/demo/img/smart_crop_blog/test_image_9_By_lQN-WE.jpeg?tr=w-200,h-200,fo-face:r-max";
+import profilePicture from '../../assets/profilePic.jpg';
 
 
 import userIcon from '../../assets/user.png';
@@ -28,7 +28,7 @@ export default class MenuScreen extends React.Component {
                     </TouchableOpacity>
 
                     <View style={styles.imageContainer}>
-                        <Image source={{ uri: profilePicture }}
+                        <Image source={profilePicture}
                             style={styles.profileImg}
                         />
                         <Text style={styles.userName}>Nilanthi Perera</Text>
@@ -137,7 +137,8 @@ const styles = StyleSheet.create({
     },
     profileImg: {
         height: 150,
-        width: 150
+        width: 150,
+        borderRadius: 100
     },
     sectionHeading: {
         fontSize: 25,
