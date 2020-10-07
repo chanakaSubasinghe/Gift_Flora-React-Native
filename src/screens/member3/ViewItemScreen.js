@@ -22,7 +22,7 @@ export default class ViewItemScreen extends React.Component {
                         <TouchableOpacity
                             title="Home"
                             onPress={() => this.props.navigation.navigate("Home")}>
-                            <Text style={styles.backButton}> Back</Text>
+                            <Text style={styles.backButton}>{`< Back`}</Text>
                         </TouchableOpacity>
 
                         <Image style={styles.image} source={require('../../assets/choco.jpg')} />
@@ -41,13 +41,13 @@ export default class ViewItemScreen extends React.Component {
 
                         <View style={{ flexDirection: 'row', marginTop: 10, justifyContent: 'space-between' }}>
                             <TouchableOpacity>
-                                <View style={{ height: 50, width: 150, backgroundColor: '#7579e7', borderRadius: 20, justifyContent: 'center', marginLeft: 10 }}>
-                                    <Text style={{ textAlign: 'center', color: 'white', fontSize: 18, fontWeight: 'bold', }}> 🛒 Add to Cart</Text>
+                                <View style={{ height: 50, width: 150, backgroundColor: '#17a2b8', borderRadius: 20, justifyContent: 'center', marginLeft: 10 }}>
+                                    <Text style={{ textAlign: 'center', color: 'white', fontSize: 18, fontWeight: 'bold', }}>Add to Cart</Text>
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity>
-                                <View style={{ height: 50, width: 150, backgroundColor: '#ffd57e', borderRadius: 20, justifyContent: 'center' }}>
-                                    <Text style={{ textAlign: 'center', color: 'white', fontSize: 18, fontWeight: 'bold', }}>💲 Buy Now</Text>
+                                <View style={{ height: 50, width: 150, backgroundColor: 'tomato', borderRadius: 20, justifyContent: 'center' }}>
+                                    <Text style={{ textAlign: 'center', color: 'white', fontSize: 18, fontWeight: 'bold', }}>Buy Now</Text>
                                 </View>
                             </TouchableOpacity>
                         </View>
@@ -57,55 +57,25 @@ export default class ViewItemScreen extends React.Component {
                     </ScrollView>
 
                 </View>
+                {/* bottom navigation bar */}
+                <View style={styles.navBar}>
+                    <View style={styles.navBarContainer}>
 
-                <View style={{ flex: 1, justifyContent: 'flex-end' }}>
-                    <View style={{
-                        backgroundColor: '#fff',
-                        width: '100%',
-                        height: Platform.OS === 'ios' ? 80 : 65,
-                        borderTopWidth: 0.5
-                    }}>
-
-                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}>
-                            <Image style={{
-                                width: 32,
-                                height: 35,
-                                position: 'absolute',
-                                bottom: Platform.OS === 'ios' ? 38 : 20,
-                                tintColor: '#5f4b8bff',
-                                left: 20
-                            }}
-                                source={homeIcon} />
-
+                        <TouchableWithoutFeedback
+                            onPress={() => this.props.navigation.navigate('Home')}>
+                            <Image style={[styles.navBarIcon, { left: 20 }]} source={homeIcon} />
                         </TouchableWithoutFeedback>
 
-
-                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}>
-                            <Image style={{
-                                width: 32,
-                                height: 35,
-                                position: 'absolute',
-                                bottom: Platform.OS === 'ios' ? 38 : 20,
-                                tintColor: '#5f4b8bff',
-                                alignSelf: 'center'
-                            }}
-                                source={shoppingCartIcon} />
-
+                        <TouchableWithoutFeedback
+                            onPress={() => this.props.navigation.navigate('Home')}>
+                            <Image style={[styles.navBarIcon, { alignSelf: 'center' }]} source={shoppingCartIcon} />
                         </TouchableWithoutFeedback>
 
-
-                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Menu')}>
-                            <Image style={{
-                                width: 32,
-                                height: 35,
-                                position: 'absolute',
-                                bottom: Platform.OS === 'ios' ? 38 : 20,
-                                tintColor: '#5f4b8bff',
-                                right: 20
-                            }}
-                                source={userIcon} />
-
+                        <TouchableWithoutFeedback
+                            onPress={() => this.props.navigation.navigate('Menu')}>
+                            <Image style={[styles.navBarIcon, { right: 20 }]} source={userIcon} />
                         </TouchableWithoutFeedback>
+
                     </View>
                 </View>
 
@@ -117,7 +87,7 @@ export default class ViewItemScreen extends React.Component {
 const styles = StyleSheet.create({
     backButton: {
         fontSize: 20,
-        marginTop: 30
+        marginTop: 40
     },
 
     image: {
@@ -150,5 +120,22 @@ const styles = StyleSheet.create({
     description: {
         marginTop: 10,
         fontSize: 15
+    },
+    navBar: {
+        flex: 1,
+        justifyContent: 'flex-end'
+    },
+    navBarContainer: {
+        backgroundColor: '#fff',
+        width: '100%',
+        height: Platform.OS === 'ios' ? 80 : 65,
+        borderTopWidth: 0.5
+    },
+    navBarIcon: {
+        width: 32,
+        height: 35,
+        position: 'absolute',
+        bottom: Platform.OS === 'ios' ? 38 : 20,
+        tintColor: '#5f4b8bff'
     }
 });

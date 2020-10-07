@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     },
     loginWarning: {
         width: 100,
-        backgroundColor: '#5d54a4',
+        backgroundColor: '#007bff',
         borderRadius: 28,
         paddingVertical: 10,
         alignItems: 'center'

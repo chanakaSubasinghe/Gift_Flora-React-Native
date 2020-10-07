@@ -25,7 +25,7 @@ export default class MenuScreen extends React.Component {
                         <Image source={profilePicture}
                             style={styles.profileImg}
                         />
-                        <Text style={styles.userName}>Nilanthi Perera</Text>
+                        <Text style={styles.userName}>Roshell Perera</Text>
                     </View>
 
                     <Text style={styles.sectionHeading}>My Account</Text>
@@ -65,54 +65,25 @@ export default class MenuScreen extends React.Component {
 
                 </View>
 
-                <View style={{ flex: 1, justifyContent: 'flex-end' }}>
-                    <View style={{
-                        backgroundColor: '#fff',
-                        width: '100%',
-                        height: Platform.OS === 'ios' ? 80 : 65,
-                        borderTopWidth: 0.5
-                    }}>
+                {/* bottom navigation bar */}
+                <View style={styles.navBar}>
+                    <View style={styles.navBarContainer}>
 
-                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}>
-                            <Image style={{
-                                width: 32,
-                                height: 35,
-                                position: 'absolute',
-                                bottom: Platform.OS === 'ios' ? 38 : 20,
-                                tintColor: '#5f4b8bff',
-                                left: 20
-                            }}
-                                source={homeIcon} />
-
+                        <TouchableWithoutFeedback
+                            onPress={() => this.props.navigation.navigate('Home')}>
+                            <Image style={[styles.navBarIcon, { left: 20 }]} source={homeIcon} />
                         </TouchableWithoutFeedback>
 
-
-                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}>
-                            <Image style={{
-                                width: 32,
-                                height: 35,
-                                position: 'absolute',
-                                bottom: Platform.OS === 'ios' ? 38 : 20,
-                                tintColor: '#5f4b8bff',
-                                alignSelf: 'center'
-                            }}
-                                source={shoppingCartIcon} />
-
+                        <TouchableWithoutFeedback
+                            onPress={() => this.props.navigation.navigate('Home')}>
+                            <Image style={[styles.navBarIcon, { alignSelf: 'center' }]} source={shoppingCartIcon} />
                         </TouchableWithoutFeedback>
 
-
-                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Menu')}>
-                            <Image style={{
-                                width: 32,
-                                height: 35,
-                                position: 'absolute',
-                                bottom: Platform.OS === 'ios' ? 38 : 20,
-                                tintColor: '#5f4b8bff',
-                                right: 20
-                            }}
-                                source={userIcon} />
-
+                        <TouchableWithoutFeedback
+                            onPress={() => this.props.navigation.navigate('Menu')}>
+                            <Image style={[styles.navBarIcon, { right: 20 }]} source={userIcon} />
                         </TouchableWithoutFeedback>
+
                     </View>
                 </View>
             </>
@@ -156,9 +127,26 @@ const styles = StyleSheet.create({
         height: 50,
         width: 190,
         marginTop: 25,
-        backgroundColor: 'crimson',
+        backgroundColor: '#dc3545',
         borderRadius: 20,
         alignSelf: 'center',
         justifyContent: 'center'
+    },
+    navBar: {
+        flex: 1,
+        justifyContent: 'flex-end'
+    },
+    navBarContainer: {
+        backgroundColor: '#fff',
+        width: '100%',
+        height: Platform.OS === 'ios' ? 80 : 65,
+        borderTopWidth: 0.5
+    },
+    navBarIcon: {
+        width: 32,
+        height: 35,
+        position: 'absolute',
+        bottom: Platform.OS === 'ios' ? 38 : 20,
+        tintColor: '#5f4b8bff'
     }
 });

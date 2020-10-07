@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
-import { FlatList, Platform, TouchableWithoutFeedback, StyleSheet, Text, View, ScrollView, Image, ImageBackground, TouchableOpacity, TextInput, Feather, PickerIOSComponent } from 'react-native';
-import { SearchBar, Card } from 'react-native-elements';
+import React from 'react';
+import { Platform, TouchableWithoutFeedback, StyleSheet, Text, View, ScrollView, Image, ImageBackground, TouchableOpacity, TextInput } from 'react-native';
 
 
 import userIcon from '../../assets/user.png';
 import homeIcon from '../../assets/home.png';
 import shoppingCartIcon from '../../assets/shoppingCart.png';
+import wallImage from '../../assets/back.jpeg';
+import loveImg from '../../assets/cart.png';
+import birthdayImg from '../../assets/cake.png';
+import businessImg from '../../assets/giftcard.png';
+import anniversaryImg from '../../assets/flowers.png';
+
+
 
 export default class HomeScreen extends React.Component {
 
@@ -15,157 +21,129 @@ export default class HomeScreen extends React.Component {
 
     render() {
         return (
-
             <>
-                       <ScrollView>
-                <View>
-                    {/* Search Container */}
+                <ScrollView>
                     <View>
-                        <Image style={{ width: '100%', height: 270, borderBottomRightRadius: 65 }} source={require('../../assets/Back.jpg')} />
-                    </View>
-                    <View style={styles.DarkOverRelay}>
-                        <View style={styles.searchContainer}>
-                            <Text style={styles.userGreet}>Hi Chanaka !</Text>
-                            <Text style={styles.userText}>What do you like to shop today ?</Text>
-                        </View>
+                        {/* Search Container */}
                         <View>
-                            <TextInput style={styles.searchBox}
-                                placeholder='Search Gift'
-                                placeholderTextColor='#000' >
-                            </TextInput>
+                            <Image style={styles.backgroundImage} source={wallImage} />
+                        </View>
+                        <View style={styles.DarkOverRelay}>
+                            <View style={styles.searchContainer}>
+                                <Text style={styles.userGreet}>Ayubowan !</Text>
+                                <Text style={styles.userText}>What do you like to shop today ?</Text>
+                            </View>
+                            <View>
+                                <TextInput style={styles.searchBox}
+                                    placeholder='Search Gift'
+                                    placeholderTextColor='#000' >
+                                </TextInput>
+                            </View>
+
                         </View>
 
-                    </View>
+                        {/* Category List */}
 
-                    {/* Category List */}
-         
-                        <View style={{ padding: 16 }}>
-                            <Text style={{ fontSize: 22, fontWeight: 'bold' }}>Categories</Text>
+                        <View style={styles.categoryContainer}>
+                            <Text style={styles.categoryText}>Categories</Text>
                         </View>
 
-                        <View style={{ flexDirection: 'row' }} >
+                        <View style={styles.categoryRow} >
+
                             <TouchableOpacity>
-                                <Image style={styles.categoryIcon} source={require('../../assets/cart.png')} />
-                                <Text style={{ marginLeft: 40, color: '#880061' }}>Love</Text>
+                                <Image style={styles.categoryIcon} source={loveImg} />
+                                <Text style={styles.categoryName}>Love</Text>
                             </TouchableOpacity>
+
                             <TouchableOpacity>
-                                <Image style={styles.categoryIcon} source={require('../../assets/cake.png')} />
-                                <Text style={{ marginLeft: 30, color: '#880061' }}>Birthday</Text>
+                                <Image style={styles.categoryIcon} source={birthdayImg} />
+                                <Text style={styles.categoryName}>Birthday</Text>
                             </TouchableOpacity>
+
                             <TouchableOpacity>
-                                <Image style={styles.categoryIcon} source={require('../../assets/giftcard.png')} />
-                                <Text style={{ marginLeft: 30, color: '#880061' }}>Buisness</Text>
+                                <Image style={styles.categoryIcon} source={businessImg} />
+                                <Text style={styles.categoryName}>Business</Text>
                             </TouchableOpacity>
+
                             <TouchableOpacity>
-                                <Image style={styles.categoryIcon} source={require('../../assets/flowers.png')} />
-                                <Text style={{ marginLeft: 20, color: '#880061' }}>Anniversary</Text>
+                                <Image style={styles.categoryIcon} source={anniversaryImg} />
+                                <Text style={styles.categoryName}>Anniversary</Text>
                             </TouchableOpacity>
+
                         </View>
 
 
                         {/* Most Popular List */}
-                        <View style={{ padding: 16, paddingTop: 20 }}>
-                            <Text style={{ fontSize: 21, fontWeight: 'bold' }}>Most Popular</Text>
+                        <View style={styles.mostPopularContainer}>
+                            <Text style={styles.mostPopularText}>Most Popular</Text>
                         </View>
 
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginVertical: 10 }}>
+                        <View style={styles.itemContainer}>
 
                             <TouchableOpacity
                                 title="ViewItem"
                                 onPress={() => this.props.navigation.navigate("ViewItem")}>
                                 <View style={styles.popularContainer} >
-                                    <Image style={{ width: 100, height: 100, marginLeft: 35, marginTop: 20 }} source={require('../../assets/choco.jpg')} />
-                                    <Text style={styles.populatText}>Chocolate Fudge Cake</Text>
+                                    <Image style={styles.itemImage} source={require('../../assets/choco.jpg')} />
+                                    <Text style={styles.popularText}>Chocolate Fudge Cake</Text>
                                     <Text style={styles.popularPrice}>Rs 5000.00</Text>
                                 </View>
 
                             </TouchableOpacity>
                             <TouchableOpacity>
                                 <View style={styles.popularContainer} >
-                                    <Image style={{ width: 100, height: 100, marginLeft: 35, marginTop: 20 }} source={require('../../assets/ross.jpg')} />
-                                    <Text style={styles.populatText}>Evelyn Flower</Text>
+                                    <Image style={styles.itemImage} source={require('../../assets/ross.jpg')} />
+                                    <Text style={styles.popularText}>Evelyn Flower</Text>
                                     <Text style={styles.popularPrice}>Rs 2000.00</Text>
                                 </View>
                             </TouchableOpacity>
                         </View>
 
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginVertical: 10 }}>
+                        <View style={styles.itemContainer}>
 
                             <TouchableOpacity
                                 title="ViewItem"
                                 onPress={() => this.props.navigation.navigate("ViewItem")}>
                                 <View style={styles.popularContainer} >
-                                    <Image style={{ width: 100, height: 100, marginLeft: 35, marginTop: 20 }} source={require('../../assets/watch.jpg')} />
-                                    <Text style={styles.populatText}>Mens Rolex Watch</Text>
+                                    <Image style={styles.itemImage} source={require('../../assets/watch.jpg')} />
+                                    <Text style={styles.popularText}>Mens Rolex Watch</Text>
                                     <Text style={styles.popularPrice}>Rs 50,000.00</Text>
                                 </View>
                             </TouchableOpacity>
 
                             <TouchableOpacity>
                                 <View style={styles.popularContainer} >
-                                    <Image style={{ width: 100, height: 100, marginLeft: 35, marginTop: 20 }} source={require('../../assets/jewellary.jpg')} />
-                                    <Text style={styles.populatText}>New Diamond</Text>
+                                    <Image style={styles.itemImage} source={require('../../assets/jewellary.jpg')} />
+                                    <Text style={styles.popularText}>New Diamond</Text>
                                     <Text style={styles.popularPrice}>Rs 200000.00</Text>
                                 </View>
                             </TouchableOpacity>
                         </View>
                         <View style={{ height: 80 }}></View>
-                      
                     </View>
                 </ScrollView>
+                {/* bottom navigation bar */}
+                <View style={styles.navBar}>
+                    <View style={styles.navBarContainer}>
 
-                <View style={{ flex: 1, justifyContent: 'flex-end' }}>
-                    <View style={{
-                        backgroundColor: '#fff',
-                        width: '100%',
-                        height: Platform.OS === 'ios' ? 80 : 65,
-                        borderTopWidth: 0.5
-                    }}>
-
-                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}>
-                            <Image style={{
-                                width: 32,
-                                height: 35,
-                                position: 'absolute',
-                                bottom: Platform.OS === 'ios' ? 38 : 20,
-                                tintColor: '#5f4b8bff',
-                                left: 20
-                            }}
-                                source={homeIcon} />
-
+                        <TouchableWithoutFeedback
+                            onPress={() => this.props.navigation.navigate('Home')}>
+                            <Image style={[styles.navBarIcon, { left: 20 }]} source={homeIcon} />
                         </TouchableWithoutFeedback>
 
-
-                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}>
-                            <Image style={{
-                                width: 32,
-                                height: 35,
-                                position: 'absolute',
-                                bottom: Platform.OS === 'ios' ? 38 : 20,
-                                tintColor: '#5f4b8bff',
-                                alignSelf: 'center'
-                            }}
-                                source={shoppingCartIcon} />
-
+                        <TouchableWithoutFeedback
+                            onPress={() => this.props.navigation.navigate('Home')}>
+                            <Image style={[styles.navBarIcon, { alignSelf: 'center' }]} source={shoppingCartIcon} />
                         </TouchableWithoutFeedback>
 
-
-                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Menu')}>
-                            <Image style={{
-                                width: 32,
-                                height: 35,
-                                position: 'absolute',
-                                bottom: Platform.OS === 'ios' ? 38 : 20,
-                                tintColor: '#5f4b8bff',
-                                right: 20
-                            }}
-                                source={userIcon} />
-
+                        <TouchableWithoutFeedback
+                            onPress={() => this.props.navigation.navigate('Menu')}>
+                            <Image style={[styles.navBarIcon, { right: 20 }]} source={userIcon} />
                         </TouchableWithoutFeedback>
+
                     </View>
-                  
                 </View>
-            
+
 
             </>
         );
@@ -173,6 +151,45 @@ export default class HomeScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
+    backgroundImage: {
+        width: '100%',
+        height: 270,
+        borderBottomRightRadius: 65
+    },
+    categoryContainer: {
+        padding: 16
+    },
+    categoryText: {
+        fontSize: 22,
+        fontWeight: 'bold'
+    },
+    categoryRow: {
+        flexDirection: 'row'
+    },
+    categoryName: {
+        alignSelf: 'center',
+        left: 10,
+        color: '#880061'
+    },
+    mostPopularContainer: {
+        padding: 16,
+        paddingTop: 20
+    },
+    mostPopularText: {
+        fontSize: 21,
+        fontWeight: 'bold'
+    },
+    itemContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        marginVertical: 10
+    },
+    itemImage: {
+        width: 100,
+        height: 100,
+        marginLeft: 35,
+        marginTop: 20
+    },
     DarkOverRelay: {
         position: 'absolute',
         top: 0,
@@ -227,18 +244,35 @@ const styles = StyleSheet.create({
         height: 180,
         width: 170,
         borderRadius: 10,
-        backgroundColor: '#ffe0f7'
+        borderWidth: 1,
+        borderColor: 'gray',
+        backgroundColor: '#fff'
     },
-    populatText: {
+    popularText: {
         marginTop: 10,
         marginLeft: 8
     },
     popularPrice: {
         marginTop: 5,
         marginLeft: 8
+    },
+    navBar: {
+        flex: 1,
+        justifyContent: 'flex-end'
+    },
+    navBarContainer: {
+        backgroundColor: '#fff',
+        width: '100%',
+        height: Platform.OS === 'ios' ? 80 : 65,
+        borderTopWidth: 0.5
+    },
+    navBarIcon: {
+        width: 32,
+        height: 35,
+        position: 'absolute',
+        bottom: Platform.OS === 'ios' ? 38 : 20,
+        tintColor: '#5f4b8bff'
     }
-
-
 });
 
 
