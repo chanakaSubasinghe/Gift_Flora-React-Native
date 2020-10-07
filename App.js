@@ -13,7 +13,12 @@ import MyAccountScreen from './src/screens/member1/MyAccountScreen';
 import MyAddressScreen from './src/screens/member1/MyAddressScreen';
 import AddAddressScreen from './src/screens/member1/AddAddressScreen';
 import EditAddressScreen from './src/screens/member1/EditAddressScreen';
-import Navigator from './src/routes/Stack'
+import Navigator from './src/routes/Stack';
+import OrderListScreen from './src/screens/member4/OrderListScreen';
+import ShoppingCartScreen from './src/screens/member4/ShoppingCartScreen';
+import ContactScreen from './src/screens/member4/ContactScreen';
+import LeaveFeedbackScreen from './src/screens/member4/LeaveFeedbackScreen';
+
 
 // importing components
 export default function App() {
@@ -27,7 +32,7 @@ export default function App() {
       {/* <MyAccountScreen /> */}
       {/* <MyAddressScreen /> */}
       {/* <AddAddressScreen /> */}
-      <EditAddressScreen />
+      {/* <EditAddressScreen /> */}
 
       {/* --- Member 2 --- */}
       {/* 
@@ -44,9 +49,10 @@ export default function App() {
       {/* <MenuScreen /> */}
 
       {/* --- Member 4 --- */}
-
-
-
+      {/* <OrderListScreen/> */}
+      {/* <ShoppingCartScreen/>  */}
+      {/* <ContactScreen/> */}
+      <LeaveFeedbackScreen />
 
       <BottomNav />
     </View>
