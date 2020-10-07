@@ -13,7 +13,7 @@ import MyAccountScreen from './src/screens/member1/MyAccountScreen';
 import MyAddressScreen from './src/screens/member1/MyAddressScreen';
 import AddAddressScreen from './src/screens/member1/AddAddressScreen';
 import EditAddressScreen from './src/screens/member1/EditAddressScreen';
-import Navigator from './src/routes/Stack'
+import Navigator from './src/routes/Stack';
 
 // importing components
 export default function App() {
@@ -44,11 +44,6 @@ export default function App() {
       {/* <MenuScreen /> */}
 
       {/* --- Member 4 --- */}
-
-
-
-
-      <BottomNav />
     </View>
   );
 }
