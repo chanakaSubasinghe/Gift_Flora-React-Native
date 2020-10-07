@@ -13,8 +13,10 @@ import Privacy from '../screens/member3/PrivacyScreen';
 import ViewItem from '../screens/member3/ViewItemScreen';
 import About from '../screens/member2/AboutScreen';
 import BottomNav from '../components/BottomNav';
-
-
+import OrderList from '../screens/member4/OrderListScreen';
+import LeaveFeedback from '../screens/member4/LeaveFeedbackScreen';
+import ShoppingCart from '../screens/member4/ShoppingCartScreen';
+import Contact from '../screens/member4/ContactScreen';
 
 const App = createSwitchNavigator({
 
@@ -31,7 +33,11 @@ const App = createSwitchNavigator({
     EditAddress: { screen: EditAddress },
     AddAddress: { screen: AddAddress },
     Forgot: { screen: Forgot },
-    BottomNav: { screen: BottomNav }
+    BottomNav: { screen: BottomNav },
+    OrderList: { screen: OrderList },
+    LeaveFeedback: { screen: LeaveFeedback },
+    ShoppingCart: { screen: ShoppingCart },
+    Contact: { screen: Contact }
 
 });
 export default createAppContainer(App);

@@ -1,8 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
-import { StyleSheet, Text, View, StatusBar, Platform } from 'react-native';
-import Logo from '../../components/Logo'
-=======
 import {
     StyleSheet,
     Text, View,
@@ -12,7 +8,6 @@ import {
     Image
 } from 'react-native';
 import Logo from '../../components/Logo';
->>>>>>> b98d334b8560d1301c4ba47ed7738378bff67626
 
 
 export default class AboutScreen extends React.Component {

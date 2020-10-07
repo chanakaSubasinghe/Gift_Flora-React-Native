@@ -1,6 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, TouchableWithoutFeedback, TouchableOpacity, Image } from 'react-native';
 import { } from 'react-navigation'
+
+import userIcon from '../../assets/user.png';
+import homeIcon from '../../assets/home.png';
+import shoppingCartIcon from '../../assets/shoppingCart.png';
 
 export default class MyAccountScreen extends React.Component {
     render() {
@@ -61,7 +65,60 @@ export default class MyAccountScreen extends React.Component {
                     </TouchableOpacity>
                 </View>
 
+                <View style={{  marginTop: 25, marginHorizontal: -19 }}>
+                    <View style={{
+                        backgroundColor: '#fff',
+                        width: '100%',
+                        height: Platform.OS === 'ios' ? 80 : 65,
+                        borderTopWidth: 0.5,
+                    }}>
+
+                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}>
+                            <Image style={{
+                                width: 32,
+                                height: 35,
+                                position: 'absolute',
+                                bottom: Platform.OS === 'ios' ? 38 : 20,
+                                tintColor: '#5f4b8bff',
+                                left: 20
+                            }}
+                                source={homeIcon} />
+
+                        </TouchableWithoutFeedback>
+
+
+                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ShoppingCart')}>
+                            <Image style={{
+                                width: 32,
+                                height: 35,
+                                position: 'absolute',
+                                bottom: Platform.OS === 'ios' ? 38 : 20,
+                                tintColor: '#5f4b8bff',
+                                alignSelf: 'center'
+                            }}
+                                source={shoppingCartIcon} />
+
+                        </TouchableWithoutFeedback>
+
+
+                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Menu')}>
+                            <Image style={{
+                                width: 32,
+                                height: 35,
+                                position: 'absolute',
+                                bottom: Platform.OS === 'ios' ? 38 : 20,
+                                tintColor: '#5f4b8bff',
+                                right: 20
+                            }}
+                                source={userIcon} />
+
+                        </TouchableWithoutFeedback>
+                    </View>
+                </View>
+
             </View>
+
+
         )
     }
 }

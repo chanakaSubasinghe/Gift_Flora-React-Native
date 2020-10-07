@@ -16,7 +16,7 @@ export default class EditAddressScreen extends React.Component {
 
                         <View>
                             <Text style={{ fontSize: 15, marginTop: 10, fontWeight: 'bold' }}>Name :</Text>
-                            <View style={{ width: 330, backgroundColor: '#fae4fc', borderRadius: 25, height: 45, paddingHorizontal: 16, fontSize: 16, marginTop: 10}}>
+                            <View style={{ width: 330, backgroundColor: '#fae4fc', borderRadius: 25, height: 45, paddingHorizontal: 16, fontSize: 16, marginTop: 10 }}>
                                 <Text style={{ fontSize: 15, marginTop: 15 }}>Liyara Karunarathna</Text>
                             </View>
                         </View>
@@ -74,7 +74,7 @@ export default class EditAddressScreen extends React.Component {
                         <View style={{ flexDirection: 'row', marginTop: 10 }}>
                             <TouchableOpacity
                                 title="Cancel"
-                                onPress={() => this.props.navigation.navigate("")}
+                                onPress={() => this.props.navigation.navigate("MyAddress")}
                                 style={{ width: 100, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginLeft: 20 }}>
                                 <       Text style={{ fontSize: 14, fontWeight: '500', color: '#ffffff', textAlign: "center" }} >Cancel</Text>
                             </TouchableOpacity>
@@ -96,6 +96,6 @@ export default class EditAddressScreen extends React.Component {
 
 const styles = StyleSheet.create({
     ScrollView: {
-        
+
     }
 });

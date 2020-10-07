@@ -115,7 +115,7 @@ export default class HomeScreen extends React.Component {
                         </TouchableWithoutFeedback>
 
 
-                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}>
+                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ShoppingCart')}>
                             <Image style={{
                                 width: 32,
                                 height: 35,

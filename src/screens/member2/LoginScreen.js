@@ -80,7 +80,7 @@ export default class LoginScreen extends React.Component {
                         </TouchableWithoutFeedback>
 
                         <TouchableWithoutFeedback
-                            onPress={() => this.props.navigation.navigate('Home')}>
+                            onPress={() => this.props.navigation.navigate('ShoppingCart')}>
                             <Image style={[styles.navBarIcon, { alignSelf: 'center' }]} source={shoppingCartIcon} />
                         </TouchableWithoutFeedback>
 

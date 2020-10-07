@@ -61,13 +61,13 @@ export default class AddAddressScreen extends React.Component {
                         <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 10 }}>
                             <TouchableOpacity
                                 title="Cancel"
-                                onPress={() => this.props.navigation.navigate("")}
+                                onPress={() => this.props.navigation.navigate("ShoppingCart")}
                                 style={{ width: 100, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginLeft: 20 }}>
                                 <       Text style={{ fontSize: 14, fontWeight: '500', color: '#ffffff', textAlign: "center" }} >Cancel</Text>
                             </TouchableOpacity>
                             <TouchableOpacity
                                 title="Save"
-                                onPress={() => this.props.navigation.navigate("")}
+                                onPress={() => this.props.navigation.navigate("MyAddress")}
                                 style={{ width: 100, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginLeft: 80 }}>
                                 <Text style={{ fontSize: 14, fontWeight: '500', color: '#ffffff', textAlign: "center" }} >Save</Text>
                             </TouchableOpacity>

@@ -1,12 +1,5 @@
 
 import React from 'react';
-<<<<<<< HEAD
-import { StyleSheet, Text, View, Button,StatusBar , TextInput , TouchableOpacity, Platform } from 'react-native';
-import Logo from '../../components/Logo'
-import {} from 'react-navigation'
-
-
-=======
 import {
     StyleSheet,
     Text,
@@ -18,7 +11,6 @@ import {
     TouchableOpacity
 } from 'react-native';
 import Logo from '../../components/Logo';
->>>>>>> b98d334b8560d1301c4ba47ed7738378bff67626
 
 export default class ForgotPasswordScreen extends React.Component {
 
