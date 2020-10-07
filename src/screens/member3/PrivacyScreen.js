@@ -1,11 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar, TouchableOpacity, TouchableWithoutFeedback, Image } from 'react-native';
 
-
-import userIcon from '../../assets/user.png';
-import homeIcon from '../../assets/home.png';
-import shoppingCartIcon from '../../assets/shoppingCart.png';
-
 export default class PrivacyScreen extends React.Component {
 
     static navigationOptions = {
