@@ -74,7 +74,10 @@ export default class HomeScreen extends React.Component{
                     </View>
                    
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity
+                title="MyAccount"
+                onPress={() =>  this.props.navigation.navigate("MyAccount")}
+                >                    
                    <View style={styles.popularContainer} >
                          <Image style={{width:100, height:100 ,marginLeft:35 , marginTop:20}} source={require('../../assets/ross.jpg')} />
                          <Text style={styles.populatText}>Evelyn Flower</Text>

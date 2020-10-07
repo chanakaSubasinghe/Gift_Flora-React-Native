@@ -21,13 +21,13 @@ export default function App() {
     <View style={styles.container}>
       <SafeAreaView style={styles.safeAreaView} />
 
-      <Navigator />
+      {/* <Navigator /> */}
 
       {/* --- Member 1 ---  */}
       {/* <MyAccountScreen /> */}
       {/* <MyAddressScreen /> */}
       {/* <AddAddressScreen /> */}
-      {/* <EditAddressScreen /> */}
+      <EditAddressScreen />
 
       {/* --- Member 2 --- */}
       {/* 
