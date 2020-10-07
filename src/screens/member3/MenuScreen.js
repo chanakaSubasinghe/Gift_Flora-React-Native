@@ -38,7 +38,7 @@ export default class MenuScreen extends React.Component {
                     <TouchableOpacity
                         title="Forgot"
                         onPress={() => this.props.navigation.navigate("Forgot")}>
-                        <Text style={styles.sectionSubHeading}>Reset Password</Text>
+                        <Text style={styles.sectionSubHeading}>Forget Password</Text>
                     </TouchableOpacity>
 
                     <Text style={styles.sectionHeading}>Support</Text>
@@ -139,6 +139,7 @@ const styles = StyleSheet.create({
     },
     sectionSubHeading: {
         fontSize: 20,
+        left: 5,
         marginTop: 10
 
     },
