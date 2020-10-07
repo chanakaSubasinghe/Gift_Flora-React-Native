@@ -26,7 +26,7 @@ export default function App() {
     <View style={styles.container}>
       <SafeAreaView style={styles.safeAreaView} />
 
-    {/* <Navigator /> */}
+      <Navigator />
 
       {/* --- Member 1 ---  */}
       {/* <MyAccountScreen /> */}
@@ -52,9 +52,7 @@ export default function App() {
       {/* <OrderListScreen/> */}
       {/* <ShoppingCartScreen/>  */}
       {/* <ContactScreen/> */}
-      <LeaveFeedbackScreen/>
-
-      <BottomNav />
+      {/* <LeaveFeedbackScreen/> */}
     </View>
   );
 }
