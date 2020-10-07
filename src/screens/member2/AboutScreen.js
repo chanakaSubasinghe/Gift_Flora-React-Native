@@ -1,11 +1,9 @@
 import React from 'react';
 import {
     StyleSheet,
-    Text, View,
-    Platform,
-    TouchableWithoutFeedback,
-    TouchableOpacity,
-    Image
+    Text,
+    View,
+    TouchableOpacity
 } from 'react-native';
 import Logo from '../../components/Logo';
 
@@ -63,23 +61,25 @@ const styles = StyleSheet.create({
     },
     firstParagraph: {
         marginTop: 40,
-        fontSize: 17
+        fontSize: 18,
+        lineHeight: 25
     },
     secondParagraph: {
         marginTop: 10,
-        fontSize: 17
+        fontSize: 18,
+        lineHeight: 25
     },
     logoText: {
         fontWeight: "bold",
-        color: '#880061'
+        color: '#5d54a4'
     },
     textContainer: {
         alignItems: 'center',
         marginTop: 20
     },
     mainTopic: {
-        fontSize: 40,
-        color: '#880061'
+        fontSize: 35,
+        color: '#5d54a4'
     },
     logo: {
         alignItems: 'center',

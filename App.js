@@ -34,27 +34,13 @@ export default function App() {
       {/* <AddAddressScreen /> */}
       {/* <EditAddressScreen /> */}
 
-      {/* --- Member 2 --- */}
-      {/* 
-      <AboutScreen /> */}
-      {/* <RegisterScreen /> */}
-      {/* <LoginScreen /> */}
-      {/* <ForgotPasswordScreen /> */}
-
-
-      {/* --- Member 3 --- */}
-      {/* <HomeScreen /> */}
-      {/* <ViewItemScreen /> */}
-      {/* <PrivacyScreen /> */}
-      {/* <MenuScreen /> */}
+    
 
       {/* --- Member 4 --- */}
       {/* <OrderListScreen/> */}
       {/* <ShoppingCartScreen/>  */}
       {/* <ContactScreen/> */}
-      {/* <LeaveFeedbackScreen /> */}
-
-      {/* <BottomNav /> */}
+      {/* <LeaveFeedbackScreen/> */}
     </View>
   );
 }

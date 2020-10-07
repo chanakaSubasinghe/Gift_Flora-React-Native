@@ -2,27 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableWithoutFeedback, Image, Platform, StatusBar, TouchableOpacity } from 'react-native';
 
 // URLs
-const profilePicture = "https://ik.imagekit.io/demo/img/smart_crop_blog/test_image_9_By_lQN-WE.jpeg?tr=w-200,h-200,fo-face:r-max";
+import profilePicture from '../../assets/profilePic.jpg';
 
-// Section component
-// function Section({ heading, subheadings }) {
-//     return (
-//         <View>
-//             <Text style={styles.sectionHeading}>{heading}</Text>
-//             <Text style={styles.sectionSubHeading}>{subheadings[0]}</Text>
-//             <Text style={styles.sectionSubHeading}>{subheadings[1]}</Text>
-//             <Text style={styles.sectionSubHeading}>{subheadings[2]}</Text>
-//         </View>
-//     );
-// }
-
-// function LogoutButton() {
-//     return (
-//         <View style={styles.loginButton}>
-//             <Button title="Logout" color="white" onPress={() => console.log('logout')} />
-//         </View>
-//     );
-// }
 
 import userIcon from '../../assets/user.png';
 import homeIcon from '../../assets/home.png';
@@ -40,14 +21,8 @@ export default class MenuScreen extends React.Component {
             <>
                 <View style={styles.container}>
 
-                    <TouchableOpacity
-                        title="Home"
-                        onPress={() => this.props.navigation.navigate("Home")}>
-                        <Text style={styles.backButton}> Back</Text>
-                    </TouchableOpacity>
-
                     <View style={styles.imageContainer}>
-                        <Image source={{ uri: profilePicture }}
+                        <Image source={profilePicture}
                             style={styles.profileImg}
                         />
                         <Text style={styles.userName}>Nilanthi Perera</Text>
@@ -67,7 +42,7 @@ export default class MenuScreen extends React.Component {
                     <TouchableOpacity
                         title="Forgot"
                         onPress={() => this.props.navigation.navigate("Forgot")}>
-                        <Text style={styles.sectionSubHeading}>Reset Password</Text>
+                        <Text style={styles.sectionSubHeading}>Forget Password</Text>
                     </TouchableOpacity>
 
                     <Text style={styles.sectionHeading}>Support</Text>
@@ -155,17 +130,14 @@ export default class MenuScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    backButton: {
-        fontSize: 20,
-        marginTop: 10
-    },
     container: {
         marginHorizontal: 20,
-        top: Platform.OS === 'android' ? StatusBar.currentHeight : null
+        top: 40
     },
     profileImg: {
         height: 150,
-        width: 150
+        width: 150,
+        borderRadius: 100
     },
     sectionHeading: {
         fontSize: 25,
@@ -176,6 +148,7 @@ const styles = StyleSheet.create({
     },
     sectionSubHeading: {
         fontSize: 20,
+        left: 5,
         marginTop: 10
 
     },
