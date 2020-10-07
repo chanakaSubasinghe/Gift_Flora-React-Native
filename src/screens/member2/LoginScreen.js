@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, TouchableWithoutFeedback, Platform } from 'react-native';
 import Logo from '../../components/Logo';
-import { } from 'react-navigation';
 
 import userIcon from '../../assets/user.png';
 import homeIcon from '../../assets/home.png';
@@ -104,7 +103,7 @@ const styles = StyleSheet.create({
     },
     welcomeText: {
         fontSize: 30,
-        color: '#880061',
+        color: '#5d54a4',
         marginBottom: 10
     },
     welcomeContainer: {
@@ -113,12 +112,15 @@ const styles = StyleSheet.create({
     },
     label: {
         fontSize: 20,
-        marginTop: 40,
+        marginTop: 30,
         paddingHorizontal: 15
     },
     userInput: {
         width: 350,
-        backgroundColor: '#fae4fc',
+        top: 10,
+        backgroundColor: '#fff',
+        borderColor: '#d6d6d6',
+        borderWidth: 2,
         borderRadius: 25,
         height: 45,
         paddingHorizontal: 16,
@@ -126,11 +128,12 @@ const styles = StyleSheet.create({
     },
     loginArea: {
         height: 40,
-        marginTop: 20
+        marginTop: 50
     },
     loginButtonContainer: {
-        width: 350,
-        backgroundColor: '#2ec1ac',
+        width: 250,
+        alignSelf: 'center',
+        backgroundColor: '#28a745',
         borderRadius: 25,
         paddingVertical: 12
     },
@@ -142,11 +145,11 @@ const styles = StyleSheet.create({
     },
     forgotPasswordArea: {
         alignItems: 'center',
-        marginTop: 10
+        marginTop: 15
     },
     forgotPasswordText: {
         fontSize: 16,
-        color: '#b1006a',
+        color: '#dc3545',
         textDecorationLine: 'underline'
     },
     registerArea: {
@@ -157,11 +160,12 @@ const styles = StyleSheet.create({
     },
     registerWarning: {
         alignItems: 'center',
+        color: '#000',
         fontSize: 17
     },
     registerButton: {
         width: 100,
-        backgroundColor: '#b1006a',
+        backgroundColor: '#007bff',
         borderRadius: 28,
         paddingVertical: 10,
         alignItems: 'center'

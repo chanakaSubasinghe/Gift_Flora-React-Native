@@ -106,18 +106,20 @@ const styles = StyleSheet.create({
     },
     welcomeText: {
         fontSize: 30,
-        color: '#880061',
+        color: '#5d54a4',
         marginBottom: 10
     },
     textLabel: {
         fontSize: 20,
-        marginTop: 10,
+        marginTop: 20,
         paddingHorizontal: 15
     },
     textInput: {
         width: 350,
-        marginTop: 10,
-        backgroundColor: '#fae4fc',
+        top: 10,
+        backgroundColor: '#fff',
+        borderColor: '#d6d6d6',
+        borderWidth: 2,
         borderRadius: 25,
         height: 45,
         paddingHorizontal: 16,
@@ -125,11 +127,12 @@ const styles = StyleSheet.create({
     },
     registerArea: {
         height: 40,
-        marginTop: 20
+        marginTop: 50
     },
     registerContainer: {
-        width: 350,
-        backgroundColor: '#5d54a4',
+        width: 250,
+        alignSelf: 'center',
+        backgroundColor: '#28a745',
         borderRadius: 25,
         paddingVertical: 12
     },
@@ -141,13 +144,13 @@ const styles = StyleSheet.create({
     },
     loginArea: {
         alignItems: 'center',
-        marginTop: 80,
+        marginTop: 60,
         justifyContent: 'center',
         flexDirection: 'row'
     },
     loginWarning: {
         width: 100,
-        backgroundColor: '#b1006a',
+        backgroundColor: '#5d54a4',
         borderRadius: 28,
         paddingVertical: 10,
         alignItems: 'center'

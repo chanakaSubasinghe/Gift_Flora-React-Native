@@ -31,7 +31,7 @@ export default class ForgotPasswordScreen extends React.Component {
                         <Logo />
                     </View>
 
-                    <Text style={styles.warning}> Please enter your Email address to reset password.</Text>
+                    <Text style={styles.warning}>Enter your email address to reset password.</Text>
 
                     {/* Email */}
                     <View>
@@ -68,23 +68,26 @@ const styles = StyleSheet.create({
     },
     topicText: {
         fontSize: 30,
-        color: '#880061',
+        color: '#5d54a4',
         marginBottom: 30
     },
     warning: {
-        marginTop: 40,
-        fontSize: 18,
-        color: '#5f4b8bff',
+        marginTop: 50,
+        fontSize: 17,
+        color: '#000',
         textAlign: "center"
     },
     label: {
-        fontSize: 18,
-        marginTop: 50,
+        fontSize: 20,
+        marginTop: 40,
         paddingHorizontal: 15
     },
     textInput: {
         width: 350,
-        backgroundColor: '#fae4fc',
+        top: 10,
+        backgroundColor: '#fff',
+        borderColor: '#d6d6d6',
+        borderWidth: 2,
         borderRadius: 25,
         height: 45,
         paddingHorizontal: 16,
@@ -92,11 +95,12 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         height: 40,
-        marginTop: 20
+        marginTop: 50
     },
     buttonArea: {
-        width: 350,
-        backgroundColor: '#ff4b5c',
+        width: 250,
+        alignSelf: 'center',
+        backgroundColor: '#dc3545',
         borderRadius: 25,
         paddingVertical: 12
     },
