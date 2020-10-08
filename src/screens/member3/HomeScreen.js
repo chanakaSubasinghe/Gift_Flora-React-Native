@@ -1,6 +1,6 @@
 import React from 'react';
 import { Platform, TouchableWithoutFeedback, StyleSheet, Text, View, ScrollView, Image, ImageBackground, TouchableOpacity, TextInput } from 'react-native';
-
+import { itemsArray } from '../../data/items';
 
 import userIcon from '../../assets/user.png';
 import homeIcon from '../../assets/home.png';
@@ -78,47 +78,26 @@ export default class HomeScreen extends React.Component {
                             <Text style={styles.mostPopularText}>Most Popular</Text>
                         </View>
 
-                        <View style={styles.itemContainer}>
 
-                            <TouchableOpacity
-                                title="ViewItem"
-                                onPress={() => this.props.navigation.navigate("ViewItem")}>
-                                <View style={styles.popularContainer} >
-                                    <Image style={styles.itemImage} source={require('../../assets/choco.jpg')} />
-                                    <Text style={styles.popularText}>Chocolate Fudge Cake</Text>
-                                    <Text style={styles.popularPrice}>Rs 5000.00</Text>
-                                </View>
+                        {itemsArray.map((item, index) => {
+                            return <View key={index} style={styles.itemContainer}>
 
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <View style={styles.popularContainer} >
-                                    <Image style={styles.itemImage} source={require('../../assets/ross.jpg')} />
-                                    <Text style={styles.popularText}>Evelyn Flower</Text>
-                                    <Text style={styles.popularPrice}>Rs 2000.00</Text>
-                                </View>
-                            </TouchableOpacity>
-                        </View>
+                                {item.container.map((product) => {
+                                    return <TouchableOpacity
+                                        title="ViewItem"
+                                        key={product._id}
+                                        onPress={() => this.props.navigation.navigate("ViewItem")}>
+                                        <View style={styles.popularContainer} >
+                                            <Image style={styles.itemImage} source={product.image} />
+                                            <Text style={styles.popularText}>{product.title}</Text>
+                                            <Text style={styles.popularPrice}>{`Rs.${product.price}.00`}</Text>
+                                        </View>
 
-                        <View style={styles.itemContainer}>
+                                    </TouchableOpacity>;
+                                })}
+                            </View>;
+                        })}
 
-                            <TouchableOpacity
-                                title="ViewItem"
-                                onPress={() => this.props.navigation.navigate("ViewItem")}>
-                                <View style={styles.popularContainer} >
-                                    <Image style={styles.itemImage} source={require('../../assets/watch.jpg')} />
-                                    <Text style={styles.popularText}>Mens Rolex Watch</Text>
-                                    <Text style={styles.popularPrice}>Rs 50,000.00</Text>
-                                </View>
-                            </TouchableOpacity>
-
-                            <TouchableOpacity>
-                                <View style={styles.popularContainer} >
-                                    <Image style={styles.itemImage} source={require('../../assets/jewellary.jpg')} />
-                                    <Text style={styles.popularText}>New Diamond</Text>
-                                    <Text style={styles.popularPrice}>Rs 200000.00</Text>
-                                </View>
-                            </TouchableOpacity>
-                        </View>
                         <View style={{ height: 80 }}></View>
                     </View>
                 </ScrollView>
