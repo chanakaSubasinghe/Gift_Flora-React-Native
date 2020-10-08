@@ -48,17 +48,19 @@ export default class ViewCategory extends React.Component {
                                 {item.container.map((product) => {
 
                                     if (product.category === category) {
-                                        return <TouchableOpacity
-                                            title="ViewItem"
-                                            key={product._id}
-                                            onPress={() => this.props.navigation.navigate("ViewItem")}>
-                                            <View style={styles.popularContainer} >
-                                                <Image style={styles.itemImage} source={product.image} />
-                                                <Text style={styles.popularText}>{product.title}</Text>
-                                                <Text style={styles.popularPrice}>{`Rs.${product.price}.00`}</Text>
-                                            </View>
+                                        return (
+                                            <TouchableOpacity
+                                                title="ViewItem"
+                                                key={product._id}
+                                                onPress={() => this.props.navigation.navigate("ViewItem", { id: product._id })}>
+                                                <View style={styles.popularContainer} >
+                                                    <Image style={styles.itemImage} source={product.image} />
+                                                    <Text style={styles.popularText}>{product.title}</Text>
+                                                    <Text style={styles.popularPrice}>{`Rs.${product.price}.00`}</Text>
+                                                </View>
 
-                                        </TouchableOpacity>;
+                                            </TouchableOpacity>
+                                        );
                                     }
                                 })}
                             </View>;
@@ -123,7 +125,6 @@ const styles = StyleSheet.create({
     },
     itemContainer: {
         marginTop: 20,
-        flexDirection: 'row',
         justifyContent: 'space-around',
         marginVertical: 10
     },
