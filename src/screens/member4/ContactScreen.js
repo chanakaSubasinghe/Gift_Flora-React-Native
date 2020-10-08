@@ -10,66 +10,54 @@ export default class ContactScreen extends React.Component {
     render() {
 
         return (
-            <View style={{ top: Platform.OS === 'android' && StatusBar.currentHeight }}>
-                <View style={{ alignItems: 'center' }}>
-                    <Text style={{ fontSize: 20, marginTop: 20, fontWeight: 'bold' }}>CONTACT US</Text>
+            <>
+                <View style={{ top: Platform.OS === 'android' && StatusBar.currentHeight }}>
+                    <View style={{ alignItems: 'center' }}>
+                        <Text style={{ fontSize: 28, marginTop: 20, fontWeight: 'bold' }}>Contact Us</Text>
+                    </View>
+
+                    <View style={{ alignItems: 'flex-start', marginLeft: 20 }}>
+
+                        <View>
+                            <Text style={{ fontSize: 15, marginTop: 10, fontWeight: 'bold' }}>Full Name :</Text>
+                            <TextInput style={styles.userInput} />
+                        </View>
+
+                        <View>
+                            <Text style={{ fontSize: 15, marginTop: 10, fontWeight: 'bold' }}>Email :</Text>
+                            <TextInput style={styles.userInput} />
+                        </View>
+
+                        <View>
+                            <Text style={{ fontSize: 15, marginTop: 10, fontWeight: 'bold' }}>Contact Number :</Text>
+                            <TextInput style={styles.userInput} />
+                        </View>
+
+                        <View>
+                            <Text style={{ fontSize: 15, marginTop: 10, fontWeight: 'bold' }}>Inquiry About :</Text>
+                            <TextInput style={styles.userInput} />
+                        </View>
+
+                        <View>
+                            <Text style={{ fontSize: 15, marginTop: 10, fontWeight: 'bold' }}>Description :</Text>
+                            <TextInput style={styles.userInput} />
+                        </View>
+
+                        <TouchableOpacity
+                            title="Submit"
+                            onPress={() => this.props.navigation.navigate("")}
+                            style={{ width: 300, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, marginLeft: 15, marginTop: 30 }}>
+                            <       Text style={{ fontSize: 18, fontWeight: '500', color: '#ffffff', textAlign: "center", fontWeight: 'bold' }} >Submit</Text>
+                        </TouchableOpacity>
+
+                    </View>
                 </View>
+                <View style={styles.navBar}>
+                    <View style={styles.navBarContainer}>
 
-                <View style={{ alignItems: 'flex-start', marginLeft: 20 }}>
-
-                    <View>
-                        <Text style={{ fontSize: 15, marginTop: 10, fontWeight: 'bold' }}>Full Name :</Text>
-                        <TextInput style={{ width: 350, backgroundColor: '#fae4fc', borderRadius: 25, height: 45, paddingHorizontal: 16, fontSize: 16, marginTop: 10 }} />
-                    </View>
-
-                    <View>
-                        <Text style={{ fontSize: 15, marginTop: 10, fontWeight: 'bold' }}>Email :</Text>
-                        <TextInput style={{ width: 350, backgroundColor: '#fae4fc', borderRadius: 25, height: 45, paddingHorizontal: 16, fontSize: 16, marginTop: 10 }} />
-                    </View>
-
-                    <View>
-                        <Text style={{ fontSize: 15, marginTop: 10, fontWeight: 'bold' }}>Contact Number :</Text>
-                        <TextInput style={{ width: 350, backgroundColor: '#fae4fc', borderRadius: 25, height: 45, paddingHorizontal: 16, fontSize: 16, marginTop: 10 }} />
-                    </View>
-
-                    <View>
-                        <Text style={{ fontSize: 15, marginTop: 10, fontWeight: 'bold' }}>Inquiry About :</Text>
-                        <TextInput style={{ width: 350, backgroundColor: '#fae4fc', borderRadius: 25, height: 45, paddingHorizontal: 16, fontSize: 16, marginTop: 10 }} />
-                    </View>
-
-                    <View>
-                        <Text style={{ fontSize: 15, marginTop: 10, fontWeight: 'bold' }}>Description :</Text>
-                        <TextInput style={{ width: 350, backgroundColor: '#fae4fc', borderRadius: 25, height: 45, paddingHorizontal: 16, fontSize: 16, marginTop: 10 }} />
-                    </View>
-
-                    <TouchableOpacity
-                        title="Submit"
-                        onPress={() => this.props.navigation.navigate("")}
-                        style={{ width: 300, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, marginLeft: 15, marginTop: 30 }}>
-                        <       Text style={{ fontSize: 18, fontWeight: '500', color: '#ffffff', textAlign: "center", fontWeight: 'bold' }} >Submit</Text>
-                    </TouchableOpacity>
-
-                </View>
-
-                <View style={{ justifyContent: 'flex-end', marginTop: 180, marginHorizontal: -12 }}>
-                    <View style={{
-                        backgroundColor: '#fff',
-                        width: '100%',
-                        height: Platform.OS === 'ios' ? 80 : 65,
-                        borderTopWidth: 0.5,
-                    }}>
-
-                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}>
-                            <Image style={{
-                                width: 32,
-                                height: 35,
-                                position: 'absolute',
-                                bottom: Platform.OS === 'ios' ? 38 : 20,
-                                tintColor: '#5f4b8bff',
-                                left: 20
-                            }}
-                                source={homeIcon} />
-
+                        <TouchableWithoutFeedback
+                            onPress={() => this.props.navigation.navigate('Home')}>
+                            <Image style={[styles.navBarIcon, { left: 20 }]} source={homeIcon} />
                         </TouchableWithoutFeedback>
 
 
@@ -83,28 +71,53 @@ export default class ContactScreen extends React.Component {
                                 alignSelf: 'center'
                             }}
                                 source={shoppingCartIcon} />
-
+                        </TouchableWithoutFeedback>
+                        <TouchableWithoutFeedback
+                            onPress={() => this.props.navigation.navigate('Menu')}>
+                            <Image style={[styles.navBarIcon, { right: 20 }]} source={userIcon} />
                         </TouchableWithoutFeedback>
 
-
-                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Menu')}>
-                            <Image style={{
-                                width: 32,
-                                height: 35,
-                                position: 'absolute',
-                                bottom: Platform.OS === 'ios' ? 38 : 20,
-                                tintColor: '#5f4b8bff',
-                                right: 20
-                            }}
-                                source={userIcon} />
-
-                        </TouchableWithoutFeedback>
                     </View>
                 </View>
-
-            </View>
+            </>
         )
     }
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    userInput: {
+        width: 350,
+        top: 10,
+        backgroundColor: '#fff',
+        borderColor: '#d6d6d6',
+        borderWidth: 2,
+        borderRadius: 25,
+        height: 45,
+        paddingHorizontal: 16,
+        fontSize: 16,
+        marginBottom: 5,
+        marginRight: 3
+    },
+    navBar: {
+        flex: 1,
+        justifyContent: 'flex-end'
+    },
+    navBarContainer: {
+        backgroundColor: '#fff',
+        width: '100%',
+        height: Platform.OS === 'ios' ? 80 : 65,
+        borderTopWidth: 0.5
+    },
+    navBarIcon: {
+        width: 32,
+        height: 35,
+        position: 'absolute',
+        bottom: Platform.OS === 'ios' ? 38 : 20,
+        tintColor: '#5f4b8bff'
+    },
+    backButton: {
+        fontSize: 20,
+        marginTop: 30,
+        fontWeight: "bold"
+    },
+});
