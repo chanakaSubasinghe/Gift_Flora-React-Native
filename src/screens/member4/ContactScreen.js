@@ -17,6 +17,11 @@ export default class ContactScreen extends React.Component {
         return (
             <>
                 <View style={{ top: Platform.OS === 'android' && StatusBar.currentHeight }}>
+                    <TouchableOpacity
+                        title="Login"
+                        onPress={() => this.props.navigation.navigate("Menu")}>
+                        <Text style={styles.backButton}>{`< Back`}</Text>
+                    </TouchableOpacity>
                     <View style={{ alignItems: 'center' }}>
                         <Text style={{ fontSize: 28, marginTop: 20, fontWeight: 'bold' }}>Contact Us</Text>
                     </View>
@@ -51,7 +56,7 @@ export default class ContactScreen extends React.Component {
                         <TouchableOpacity
                             title="Submit"
                             onPress={() => this.props.navigation.navigate("")}
-                            style={{ width: 300, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, marginLeft: 15, marginTop: 30 }}>
+                            style={{ width: 200, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, marginLeft: 30, marginTop: 30 }}>
                             <       Text style={{ fontSize: 18, fontWeight: '500', color: '#ffffff', textAlign: "center", fontWeight: 'bold' }} >Submit</Text>
                         </TouchableOpacity>
 
@@ -123,6 +128,5 @@ const styles = StyleSheet.create({
     backButton: {
         fontSize: 20,
         marginTop: 30,
-        fontWeight: "bold"
     },
 });

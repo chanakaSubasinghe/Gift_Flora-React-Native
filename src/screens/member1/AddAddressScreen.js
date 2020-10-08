@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar, TouchableOpacity, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, TouchableOpacity, ScrollView, Platform } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import { } from 'react-navigation'
 
@@ -81,6 +81,7 @@ export default class AddAddressScreen extends React.Component {
 
                         </View>
                     </View>
+                    <View style={{ height: 80 }}></View>
                 </View>
             </ScrollView>
         )

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar, Button, TouchableOpacity, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, Button, TouchableOpacity, SafeAreaView, Platform } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { } from 'react-navigation'
 
@@ -92,7 +92,7 @@ export default class EditAddressScreen extends React.Component {
                         </View>
 
                     </View>
-
+                    <View style={{ height: 80 }}></View>
                 </View >
             </ScrollView>
         )

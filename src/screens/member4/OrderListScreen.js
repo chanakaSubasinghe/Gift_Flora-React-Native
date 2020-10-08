@@ -18,9 +18,9 @@ export default class OrderListScreen extends React.Component {
                 <ScrollView>
                     <View style={{ top: Platform.OS === 'android' && StatusBar.currentHeight }}>
                         <TouchableOpacity
-                            title="Home"
+                            title="Login"
                             onPress={() => this.props.navigation.navigate("MyAccount")}>
-                            <Text style={styles.backButton}> Back</Text>
+                            <Text style={styles.backButton}>{`< Back`}</Text>
                         </TouchableOpacity>
                         <View style={{ alignItems: 'center' }}>
                             <Text style={{ fontSize: 28, fontWeight: 'bold' }}>Order List</Text>
@@ -80,7 +80,7 @@ export default class OrderListScreen extends React.Component {
                                 <Text style={{ marginTop: 20, fontSize: 15, fontWeight: 'bold', marginLeft: 50 }}>Rs.2000.00</Text>
                             </View>
                         </View>
-
+                        <View style={{ height: 80 }}></View>
                     </View>
                 </ScrollView>
 
@@ -148,6 +148,5 @@ const styles = StyleSheet.create({
     backButton: {
         fontSize: 20,
         marginTop: 30,
-        fontWeight: "bold"
     },
 });

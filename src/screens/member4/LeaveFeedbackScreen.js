@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar, TouchableWithoutFeedback, Platform, Image, TouchableOpacity } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
+import { ScrollView, TextInput } from 'react-native-gesture-handler';
 
 import userIcon from '../../assets/user.png';
 import homeIcon from '../../assets/home.png';
@@ -15,50 +15,53 @@ export default class LeaveFeedbackScreen extends React.Component {
     render() {
         return (
             <>
-                <View style={{ top: Platform.OS === 'android' && StatusBar.currentHeight }}>
-                    <TouchableOpacity
-                        title="Home"
-                        onPress={() => this.props.navigation.navigate("OrderList")}>
-                        <Text style={styles.backButton}> Back</Text>
-                    </TouchableOpacity>
-                    <View style={{ alignItems: 'center' }}>
-                        <Text style={{ fontSize: 28, fontWeight: 'bold' }}>Leave Feedback</Text>
-                    </View>
-
-                    <View style={{ marginTop: 2, backgroundColor: '#dddddd', width: '105%', height: 20 }} />
-
-                    <View style={{ flexDirection: 'row', marginTop: 20 }}>
-                        <View style={styles.popularContainer} >
-                            <Image style={{ width: 130, height: 130, marginLeft: 20, marginTop: 25 }} source={require('../../assets/choco.jpg')} />
-                        </View>
-                        <View>
-                            <Text style={{ marginTop: 40, fontSize: 15, fontWeight: 'bold', marginLeft: 10 }}>Chocolate Fudge Cake</Text>
-                            <Text style={{ marginTop: 20, fontSize: 15, fontWeight: 'bold', marginLeft: 50 }}>Rs.5000.00</Text>
-                        </View>
-                    </View>
-
-                    <View style={shadowstyles.boxWithShadow} >
-                        <Text style={{ fontSize: 15, marginTop: 10, fontWeight: 'bold', marginLeft: 5 }}>How do you rate the product ?</Text>
-                        <View style={{ flexDirection: 'row', marginLeft: 20 }}>
-                            <Image style={{ width: 30, height: 30, marginLeft: 20, marginTop: 10 }} source={require('../../assets/star1.png')} />
-                            <Image style={{ width: 30, height: 30, marginLeft: 5, marginTop: 10 }} source={require('../../assets/star1.png')} />
-                            <Image style={{ width: 30, height: 30, marginLeft: 5, marginTop: 10 }} source={require('../../assets/star1.png')} />
-                            <Image style={{ width: 30, height: 30, marginLeft: 5, marginTop: 10 }} source={require('../../assets/star2.png')} />
-                            <Image style={{ width: 30, height: 30, marginLeft: 5, marginTop: 10 }} source={require('../../assets/star2.png')} />
-                        </View>
-                        <Text style={{ fontSize: 15, marginTop: 10, fontWeight: 'bold', marginLeft: 5 }}>Title </Text>
-                        <TextInput style={styles.userInput} />
-                        <Text style={{ fontSize: 15, marginTop: 10, fontWeight: 'bold', marginLeft: 5 }}>Description </Text>
-                        <TextInput style={styles.userInput} />
-
+                <ScrollView>
+                    <View style={{ top: Platform.OS === 'android' && StatusBar.currentHeight }}>
                         <TouchableOpacity
-                            title="Submit"
-                            onPress={() => this.props.navigation.navigate("")}
-                            style={{ width: 130, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, marginLeft: 110, marginTop: 30 }}>
-                            <       Text style={{ fontSize: 14, fontWeight: '500', color: '#ffffff', textAlign: "center" }} >Submit</Text>
+                            title="Login"
+                            onPress={() => this.props.navigation.navigate("OrderList")}>
+                            <Text style={styles.backButton}>{`< Back`}</Text>
                         </TouchableOpacity>
+                        <View style={{ alignItems: 'center' }}>
+                            <Text style={{ fontSize: 28, fontWeight: 'bold' }}>Leave Feedback</Text>
+                        </View>
+
+                        <View style={{ marginTop: 2, backgroundColor: '#dddddd', width: '105%', height: 20 }} />
+
+                        <View style={{ flexDirection: 'row', marginTop: 20 }}>
+                            <View style={styles.popularContainer} >
+                                <Image style={{ width: 130, height: 130, marginLeft: 20, marginTop: 25 }} source={require('../../assets/choco.jpg')} />
+                            </View>
+                            <View>
+                                <Text style={{ marginTop: 40, fontSize: 15, fontWeight: 'bold', marginLeft: 10 }}>Chocolate Fudge Cake</Text>
+                                <Text style={{ marginTop: 20, fontSize: 15, fontWeight: 'bold', marginLeft: 50 }}>Rs.5000.00</Text>
+                            </View>
+                        </View>
+
+                        <View style={shadowstyles.boxWithShadow} >
+                            <Text style={{ fontSize: 15, marginTop: 10, fontWeight: 'bold', marginLeft: 5 }}>How do you rate the product ?</Text>
+                            <View style={{ flexDirection: 'row', marginLeft: 20 }}>
+                                <Image style={{ width: 30, height: 30, marginLeft: 20, marginTop: 10 }} source={require('../../assets/star1.png')} />
+                                <Image style={{ width: 30, height: 30, marginLeft: 5, marginTop: 10 }} source={require('../../assets/star1.png')} />
+                                <Image style={{ width: 30, height: 30, marginLeft: 5, marginTop: 10 }} source={require('../../assets/star1.png')} />
+                                <Image style={{ width: 30, height: 30, marginLeft: 5, marginTop: 10 }} source={require('../../assets/star2.png')} />
+                                <Image style={{ width: 30, height: 30, marginLeft: 5, marginTop: 10 }} source={require('../../assets/star2.png')} />
+                            </View>
+                            <Text style={{ fontSize: 15, marginTop: 10, fontWeight: 'bold', marginLeft: 5 }}>Title </Text>
+                            <TextInput style={styles.userInput} />
+                            <Text style={{ fontSize: 15, marginTop: 10, fontWeight: 'bold', marginLeft: 5 }}>Description </Text>
+                            <TextInput style={styles.userInput} />
+
+                            <TouchableOpacity
+                                title="Submit"
+                                onPress={() => this.props.navigation.navigate("")}
+                                style={{ width: 130, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, marginLeft: 110, marginTop: 30 }}>
+                                <       Text style={{ fontSize: 14, fontWeight: '500', color: '#ffffff', textAlign: "center" }} >Submit</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={{ height: 80 }}></View>
                     </View>
-                </View>
+                </ScrollView>
 
                 <View style={styles.navBar}>
                     <View style={styles.navBarContainer}>
@@ -106,7 +109,6 @@ const styles = StyleSheet.create({
     backButton: {
         fontSize: 20,
         marginTop: 30,
-        fontWeight: "bold"
     },
     userInput: {
         width: 350,
@@ -141,7 +143,6 @@ const styles = StyleSheet.create({
     backButton: {
         fontSize: 20,
         marginTop: 30,
-        fontWeight: "bold"
     },
 
 });

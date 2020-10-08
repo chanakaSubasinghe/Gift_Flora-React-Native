@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { StyleSheet, Text, View, TouchableWithoutFeedback, Image, StatusBar, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableWithoutFeedback, Image, StatusBar, TextInput, TouchableOpacity, Platform } from 'react-native';
 import Logo from '../../components/Logo';
 
 import userIcon from '../../assets/user.png';
