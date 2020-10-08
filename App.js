@@ -18,6 +18,7 @@ import OrderListScreen from './src/screens/member4/OrderListScreen';
 import ShoppingCartScreen from './src/screens/member4/ShoppingCartScreen';
 import ContactScreen from './src/screens/member4/ContactScreen';
 import LeaveFeedbackScreen from './src/screens/member4/LeaveFeedbackScreen';
+import ViewCategory from './src/screens/member3/ViewCategory';
 
 
 // importing components
@@ -27,6 +28,8 @@ export default function App() {
       <SafeAreaView style={styles.safeAreaView} />
 
       <Navigator />
+      
+      {/* <ViewCategory/> */}
 
       {/* --- Member 1 ---  */}
       {/* <MyAccountScreen /> */}

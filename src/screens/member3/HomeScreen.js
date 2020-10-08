@@ -50,7 +50,7 @@ export default class HomeScreen extends React.Component {
 
                         <View style={styles.categoryRow} >
 
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('ViewCategory')}>
                                 <Image style={styles.categoryIcon} source={loveImg} />
                                 <Text style={styles.categoryName}>Love</Text>
                             </TouchableOpacity>
