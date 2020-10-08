@@ -27,8 +27,8 @@ export default class MyAccountScreen extends React.Component {
 
 
                     <View style={{ alignItems: 'center', marginTop: 10 }}>
-                        <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#776d8a' }}>Welcome To Your Account !</Text>
-                        <Text style={{ fontSize: 19, textAlign: 'center', marginTop: 5, color: '#776d8a', fontWeight: 'bold', }}>Here you can manage all your personal information and orders</Text>
+                        <Text style={{ fontSize: 22, color: '#59405c' }}>Welcome To Your Account !</Text>
+                        <Text style={{ fontSize: 19, textAlign: 'center', marginTop: 5, color: '#59405c' }}>Here you can manage all your personal information and orders</Text>
                     </View>
 
 
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
         width: 160,
         borderRadius: 10,
         borderWidth: 1,
-        borderColor: '#0f4c75',
+        borderColor: '#e3dfc8',
         backgroundColor: '#fff',
         marginLeft: 20
     },
