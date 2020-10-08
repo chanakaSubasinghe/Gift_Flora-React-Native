@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     },
     textContainer: {
         alignItems: 'center',
-        marginTop: 20
+        marginTop: 10
     },
     mainTopic: {
         fontSize: 35,

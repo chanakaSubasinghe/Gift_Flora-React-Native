@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     },
     welcomeContainer: {
         alignItems: 'center',
-        marginTop: 20
+        marginTop: 40
     },
     welcomeText: {
         fontSize: 30,
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     },
     registerArea: {
         height: 40,
-        marginTop: 50
+        marginTop: 40
     },
     registerContainer: {
         width: 250,
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
     },
     loginArea: {
         alignItems: 'center',
-        marginTop: 60,
+        marginTop: 45,
         justifyContent: 'center',
         flexDirection: 'row'
     },

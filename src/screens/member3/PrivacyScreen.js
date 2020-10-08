@@ -18,7 +18,7 @@ export default class PrivacyScreen extends React.Component {
                 <View style={styles.container}>
                     <TouchableOpacity
                         title="Home"
-                        onPress={() => this.props.navigation.navigate("Home")}>
+                        onPress={() => this.props.navigation.navigate("Menu")}>
                         <Text style={styles.backButton}>{`< Back`}</Text>
                     </TouchableOpacity>
 

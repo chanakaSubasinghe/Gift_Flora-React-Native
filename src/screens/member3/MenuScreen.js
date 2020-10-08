@@ -39,12 +39,6 @@ export default class MenuScreen extends React.Component {
                         onPress={() => this.props.navigation.navigate("MyAddress")}>
                         <Text style={styles.sectionSubHeading}>My Addresses</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity
-                        title="Forgot"
-                        onPress={() => this.props.navigation.navigate("Forgot")}>
-                        <Text style={styles.sectionSubHeading}>Forget Password</Text>
-                    </TouchableOpacity>
-
                     <Text style={styles.sectionHeading}>Support</Text>
                     <TouchableOpacity
                         title="About"
