@@ -7,13 +7,18 @@ import homeIcon from '../../assets/home.png';
 import shoppingCartIcon from '../../assets/shoppingCart.png';
 
 export default class LeaveFeedbackScreen extends React.Component {
+
+    static navigationOptions = {
+        title: "LeaveFeedback",
+    };
+
     render() {
         return (
             <>
                 <View style={{ top: Platform.OS === 'android' && StatusBar.currentHeight }}>
                     <TouchableOpacity
                         title="Home"
-                        onPress={() => this.props.navigation.navigate("Home")}>
+                        onPress={() => this.props.navigation.navigate("OrderList")}>
                         <Text style={styles.backButton}> Back</Text>
                     </TouchableOpacity>
                     <View style={{ alignItems: 'center' }}>

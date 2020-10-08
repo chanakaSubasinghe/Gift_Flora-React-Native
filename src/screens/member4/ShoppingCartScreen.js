@@ -7,13 +7,18 @@ import shoppingCartIcon from '../../assets/shoppingCart.png';
 
 
 export default class ShoppingCartScreen extends React.Component {
+
+    static navigationOptions = {
+        title: "ShoppingCart",
+    };
+
     render() {
         return (
             <>
                 <View style={{ top: Platform.OS === 'android' && StatusBar.currentHeight }}>
                     <TouchableOpacity
                         title="Home"
-                        onPress={() => this.props.navigation.navigate("Home")}>
+                        onPress={() => this.props.navigation.navigate("OrderList")}>
                         <Text style={styles.backButton}> Back</Text>
                     </TouchableOpacity>
                     <View style={{ alignItems: 'center' }}>

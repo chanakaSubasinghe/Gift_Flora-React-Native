@@ -7,6 +7,11 @@ import homeIcon from '../../assets/home.png';
 import shoppingCartIcon from '../../assets/shoppingCart.png';
 
 export default class ContactScreen extends React.Component {
+
+    static navigationOptions = {
+        title: "Contact",
+    };
+
     render() {
 
         return (

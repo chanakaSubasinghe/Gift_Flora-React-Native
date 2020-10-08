@@ -7,6 +7,11 @@ import shoppingCartIcon from '../../assets/shoppingCart.png';
 import { ScrollView } from 'react-native-gesture-handler';
 
 export default class OrderListScreen extends React.Component {
+
+    static navigationOptions = {
+        title: "OrderList",
+    };
+
     render() {
         return (
             <>
@@ -14,7 +19,7 @@ export default class OrderListScreen extends React.Component {
                     <View style={{ top: Platform.OS === 'android' && StatusBar.currentHeight }}>
                         <TouchableOpacity
                             title="Home"
-                            onPress={() => this.props.navigation.navigate("Home")}>
+                            onPress={() => this.props.navigation.navigate("MyAccount")}>
                             <Text style={styles.backButton}> Back</Text>
                         </TouchableOpacity>
                         <View style={{ alignItems: 'center' }}>
@@ -33,7 +38,7 @@ export default class OrderListScreen extends React.Component {
                             </TouchableOpacity>
                             <TouchableOpacity
                                 title="BuySame"
-                                onPress={() => this.props.navigation.navigate("")}
+                                onPress={() => this.props.navigation.navigate("ShoppingCart")}
                                 style={{ width: 130, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginRight: 35 }}>
                                 <       Text style={{ fontSize: 14, fontWeight: 'bold', color: '#ffffff', textAlign: "center" }} >Buy Same</Text>
                             </TouchableOpacity>
@@ -60,7 +65,7 @@ export default class OrderListScreen extends React.Component {
                             </TouchableOpacity>
                             <TouchableOpacity
                                 title="BuySame"
-                                onPress={() => this.props.navigation.navigate("")}
+                                onPress={() => this.props.navigation.navigate("ShoppingCart")}
                                 style={{ width: 130, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginRight: 35 }}>
                                 <       Text style={{ fontSize: 14, fontWeight: 'bold', color: '#ffffff', textAlign: "center" }} >Buy Same</Text>
                             </TouchableOpacity>
