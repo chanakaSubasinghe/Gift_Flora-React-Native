@@ -1,6 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View, Platform, TouchableWithoutFeedback,TextInput, StatusBar, Image, ScrollView , TouchableOpacity } from 'react-native';
-
+import {
+    StyleSheet,
+    Text,
+    View,
+    Platform,
+    TouchableWithoutFeedback,
+    TextInput,
+    Image,
+    ScrollView,
+    TouchableOpacity
+} from 'react-native';
+import { itemsArray } from '../../data/items';
 
 import userIcon from '../../assets/user.png';
 import homeIcon from '../../assets/home.png';
@@ -12,11 +22,13 @@ export default class ViewCategory extends React.Component {
         title: "ViewCategory"
     };
     render() {
+        const category = this.props.navigation.state.params.category;
+
         return (
             <>
                 <View style={{ marginHorizontal: 20 }}>
 
-                <ScrollView>
+                    <ScrollView>
 
                         <TouchableOpacity
                             title="Home"
@@ -25,71 +37,36 @@ export default class ViewCategory extends React.Component {
                         </TouchableOpacity>
 
                         <View style={styles.mostPopularContainer}>
-                            <Text style={styles.mostPopularText}>Love</Text>
+                            <Text style={styles.mostPopularText}>{category}</Text>
                         </View>
 
                         <TextInput placeholder='Search' style={styles.userInput} />
-                        
-                        <View style={styles.itemContainer}>
 
-                        <TouchableOpacity>
-                            <View style={styles.popularContainer} >
-                                <Image style={styles.itemImage} source={require('../../assets/choco.jpg')} />
-                                <Text style={styles.popularText}>Chocolate Fudge Cake</Text>
-                                <Text style={styles.popularPrice}>Rs 5000.00</Text>
-                            </View>
+                        {itemsArray.map((item, index) => {
+                            return <View key={index} style={styles.itemContainer}>
 
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <View style={styles.popularContainer} >
-                                <Image style={styles.itemImage} source={require('../../assets/ross.jpg')} />
-                                <Text style={styles.popularText}>Evelyn Flower</Text>
-                                <Text style={styles.popularPrice}>Rs 2000.00</Text>
-                            </View>
-                        </TouchableOpacity>
-                        </View>
+                                {item.container.map((product) => {
 
-                        <View style={styles.itemContainer}>
+                                    if (product.category === category) {
+                                        return <TouchableOpacity
+                                            title="ViewItem"
+                                            key={product._id}
+                                            onPress={() => this.props.navigation.navigate("ViewItem")}>
+                                            <View style={styles.popularContainer} >
+                                                <Image style={styles.itemImage} source={product.image} />
+                                                <Text style={styles.popularText}>{product.title}</Text>
+                                                <Text style={styles.popularPrice}>{`Rs.${product.price}.00`}</Text>
+                                            </View>
 
-                        <TouchableOpacity>
-                            <View style={styles.popularContainer} >
-                                <Image style={styles.itemImage} source={require('../../assets/choco.jpg')} />
-                                <Text style={styles.popularText}>Chocolate Fudge Cake</Text>
-                                <Text style={styles.popularPrice}>Rs 5000.00</Text>
-                            </View>
-
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <View style={styles.popularContainer} >
-                                <Image style={styles.itemImage} source={require('../../assets/ross.jpg')} />
-                                <Text style={styles.popularText}>Evelyn Flower</Text>
-                                <Text style={styles.popularPrice}>Rs 2000.00</Text>
-                            </View>
-                        </TouchableOpacity>
-                        </View>
-
-                        <View style={styles.itemContainer}>
-
-                    <TouchableOpacity>
-                        <View style={styles.popularContainer} >
-                            <Image style={styles.itemImage} source={require('../../assets/choco.jpg')} />
-                            <Text style={styles.popularText}>Chocolate Fudge Cake</Text>
-                            <Text style={styles.popularPrice}>Rs 5000.00</Text>
-                        </View>
-
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <View style={styles.popularContainer} >
-                            <Image style={styles.itemImage} source={require('../../assets/ross.jpg')} />
-                            <Text style={styles.popularText}>Evelyn Flower</Text>
-                            <Text style={styles.popularPrice}>Rs 2000.00</Text>
-                        </View>
-                    </TouchableOpacity>
-                    </View>
+                                        </TouchableOpacity>;
+                                    }
+                                })}
+                            </View>;
+                        })}
 
                         <View style={{ height: 80 }}></View>
 
-                 </ScrollView>
+                    </ScrollView>
 
                 </View>
                 {/* bottom navigation bar */}
@@ -126,7 +103,7 @@ const styles = StyleSheet.create({
     },
     userInput: {
         width: 350,
-        top: 6,
+        top: 10,
         backgroundColor: '#fff',
         borderColor: '#d6d6d6',
         borderWidth: 2,
@@ -134,7 +111,7 @@ const styles = StyleSheet.create({
         height: 45,
         paddingHorizontal: 16,
         fontSize: 18,
-        fontStyle:'italic'
+        fontStyle: 'italic'
     },
     mostPopularContainer: {
         padding: 16,
@@ -145,6 +122,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     itemContainer: {
+        marginTop: 20,
         flexDirection: 'row',
         justifyContent: 'space-around',
         marginVertical: 10
@@ -163,7 +141,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: 'gray',
         backgroundColor: '#fff',
-        marginTop:10
+        marginTop: 10
     },
     popularText: {
         marginTop: 10,

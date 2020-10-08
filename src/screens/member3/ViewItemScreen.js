@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Platform, TouchableWithoutFeedback, StatusBar, Image, ScrollView } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { itemsArray } from '../../data/items';
 
 
 import userIcon from '../../assets/user.png';
@@ -9,10 +10,25 @@ import shoppingCartIcon from '../../assets/shoppingCart.png';
 
 export default class ViewItemScreen extends React.Component {
 
+    constructor(props) {
+        super(props);
+    }
+
+
     static navigationOptions = {
         title: "ViewItem"
     };
+
     render() {
+        const id = this.props.navigation.state.params.id;
+        let gift;
+
+        itemsArray.find((item) => {
+            return gift = item.container.find((product) => {
+                return product._id === id;
+            });
+        });
+
         return (
             <>
                 <View style={{ marginHorizontal: 20 }}>
@@ -25,19 +41,15 @@ export default class ViewItemScreen extends React.Component {
                             <Text style={styles.backButton}>{`< Back`}</Text>
                         </TouchableOpacity>
 
-                        <Image style={styles.image} source={require('../../assets/choco.jpg')} />
+                        <Image style={styles.image} source={gift.image} />
 
-                        <Text style={styles.price}>Rs. 1500</Text>
+                        <Text style={styles.price}>{`Rs.${gift.price}.00`}</Text>
 
-                        <Text style={styles.heading}>Chocolate Fudge Cake</Text>
+                        <Text style={styles.heading}>{gift.title}</Text>
 
                         <Text style={styles.desHeading}>Description</Text>
 
-                        <Text style={styles.description}>A chocolate Fudge cake is a cake made with
-                        chocolate or cocoa. The ingredients are put into a bowl and mixed together; then the
-                        mixed ingredients are put into a cake tin and put
-                        in an oven until it is fully cooked.
-                </Text>
+                        <Text style={styles.description}>{gift.description}</Text>
 
                         <View style={{ flexDirection: 'row', marginTop: 10, justifyContent: 'space-between' }}>
                             <TouchableOpacity>
@@ -89,7 +101,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
         marginTop: 40
     },
-
     image: {
         height: 350,
         width: 350,
@@ -100,9 +111,8 @@ const styles = StyleSheet.create({
         fontSize: 20,
         marginTop: 20,
         backgroundColor: '#ffefa0',
-
         padding: 10,
-        width: 120,
+        width: 150,
         color: '#d7385e',
         fontWeight: 'bold',
         textAlign: 'center'

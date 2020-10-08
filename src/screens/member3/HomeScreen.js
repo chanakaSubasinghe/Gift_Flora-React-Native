@@ -1,5 +1,15 @@
 import React from 'react';
-import { Platform, TouchableWithoutFeedback, StyleSheet, Text, View, ScrollView, Image, ImageBackground, TouchableOpacity, TextInput } from 'react-native';
+import {
+    Platform,
+    TouchableWithoutFeedback,
+    StyleSheet,
+    Text,
+    View,
+    ScrollView,
+    Image,
+    TouchableOpacity,
+    TextInput
+} from 'react-native';
 import { itemsArray } from '../../data/items';
 
 import userIcon from '../../assets/user.png';
@@ -50,22 +60,22 @@ export default class HomeScreen extends React.Component {
 
                         <View style={styles.categoryRow} >
 
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('ViewCategory')}>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('ViewCategory', { category: 'Love' })}>
                                 <Image style={styles.categoryIcon} source={loveImg} />
                                 <Text style={styles.categoryName}>Love</Text>
                             </TouchableOpacity>
 
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('ViewCategory', { category: 'Birthday' })}>
                                 <Image style={styles.categoryIcon} source={birthdayImg} />
                                 <Text style={styles.categoryName}>Birthday</Text>
                             </TouchableOpacity>
 
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('ViewCategory', { category: 'Business' })}>
                                 <Image style={styles.categoryIcon} source={businessImg} />
                                 <Text style={styles.categoryName}>Business</Text>
                             </TouchableOpacity>
 
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('ViewCategory', { category: 'Anniversary' })}>
                                 <Image style={styles.categoryIcon} source={anniversaryImg} />
                                 <Text style={styles.categoryName}>Anniversary</Text>
                             </TouchableOpacity>
@@ -86,7 +96,7 @@ export default class HomeScreen extends React.Component {
                                     return <TouchableOpacity
                                         title="ViewItem"
                                         key={product._id}
-                                        onPress={() => this.props.navigation.navigate("ViewItem")}>
+                                        onPress={() => this.props.navigation.navigate("ViewItem", { id: product._id })}>
                                         <View style={styles.popularContainer} >
                                             <Image style={styles.itemImage} source={product.image} />
                                             <Text style={styles.popularText}>{product.title}</Text>
