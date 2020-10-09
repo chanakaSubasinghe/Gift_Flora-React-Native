@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar, TouchableWithoutFeedback, TouchableOpacity, Image, Platform } from 'react-native';
-import { } from 'react-navigation'
+import { } from 'react-navigation';
 
 import userIcon from '../../assets/user.png';
 import homeIcon from '../../assets/home.png';
@@ -67,13 +67,13 @@ export default class MyAccountScreen extends React.Component {
                             <TouchableOpacity
                                 title="MyAccount"
                                 onPress={() => this.props.navigation.navigate("MyAccount")}
-                                style={{ width: 100, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginLeft: 45, marginTop: 10 }}>
-                                <       Text style={{ fontSize: 14, fontWeight: 'bold', color: '#ffffff', textAlign: "center" }} >My Account</Text>
+                                style={{ width: 100, backgroundColor: '#007bff', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginLeft: 45, marginTop: 10 }}>
+                                <Text style={{ fontSize: 14, fontWeight: 'bold', color: '#ffffff', textAlign: "center" }} >My Account</Text>
                             </TouchableOpacity>
                             <TouchableOpacity
                                 title="Home"
                                 onPress={() => this.props.navigation.navigate("Home")}
-                                style={{ width: 100, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginRight: 40, marginTop: 10 }}>
+                                style={{ width: 100, backgroundColor: 'black', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginRight: 40, marginTop: 10 }}>
                                 <       Text style={{ fontSize: 14, fontWeight: 'bold', color: '#ffffff', textAlign: "center" }} >Shop</Text>
                             </TouchableOpacity>
                         </View>
@@ -109,14 +109,14 @@ export default class MyAccountScreen extends React.Component {
                 </View>
 
             </>
-        )
+        );
     }
 }
 const styles = StyleSheet.create({
     backButton: {
         fontSize: 20,
         marginTop: 30,
-
+        left: 10
     },
     navBar: {
         flex: 1,

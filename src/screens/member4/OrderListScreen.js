@@ -27,19 +27,19 @@ export default class OrderListScreen extends React.Component {
                         </View>
 
 
-                        <View style={{ marginTop: 5, fontWeight: 'bold', backgroundColor: '#dddddd', width: '105%', height: 20 }} />
+                        <View style={{ marginTop: 5, fontWeight: 'bold', backgroundColor: '#dddddd', width: '105%', height: 5 }} />
 
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginVertical: 20 }}>
                             <TouchableOpacity
                                 title="LeaveFeedback"
                                 onPress={() => this.props.navigation.navigate("LeaveFeedback")}
-                                style={{ width: 130, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginLeft: 35 }}>
+                                style={{ width: 130, backgroundColor: '#007bff', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginLeft: 35 }}>
                                 <       Text style={{ fontSize: 14, fontWeight: 'bold', color: '#ffffff', textAlign: "center" }} >Leave Feedback</Text>
                             </TouchableOpacity>
                             <TouchableOpacity
                                 title="BuySame"
                                 onPress={() => this.props.navigation.navigate("ShoppingCart")}
-                                style={{ width: 130, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginRight: 35 }}>
+                                style={{ width: 130, backgroundColor: 'green', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginRight: 35 }}>
                                 <       Text style={{ fontSize: 14, fontWeight: 'bold', color: '#ffffff', textAlign: "center" }} >Buy Same</Text>
                             </TouchableOpacity>
                         </View>
@@ -54,19 +54,19 @@ export default class OrderListScreen extends React.Component {
                             </View>
                         </View>
 
-                        <View style={{ marginTop: 20, fontWeight: 'bold', backgroundColor: '#dddddd', width: '105%', height: 20 }} />
+                        <View style={{ marginTop: 20, fontWeight: 'bold', backgroundColor: '#dddddd', width: '105%', height: 5 }} />
 
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginVertical: 20 }}>
                             <TouchableOpacity
                                 title="LeaveFeedback"
                                 onPress={() => this.props.navigation.navigate("LeaveFeedback")}
-                                style={{ width: 130, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginLeft: 35 }}>
+                                style={{ width: 130, backgroundColor: '#007bff', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginLeft: 35 }}>
                                 <       Text style={{ fontSize: 14, fontWeight: 'bold', color: '#ffffff', textAlign: "center" }} >Leave Feedback</Text>
                             </TouchableOpacity>
                             <TouchableOpacity
                                 title="BuySame"
                                 onPress={() => this.props.navigation.navigate("ShoppingCart")}
-                                style={{ width: 130, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginRight: 35 }}>
+                                style={{ width: 130, backgroundColor: 'green', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginRight: 35 }}>
                                 <       Text style={{ fontSize: 14, fontWeight: 'bold', color: '#ffffff', textAlign: "center" }} >Buy Same</Text>
                             </TouchableOpacity>
                         </View>
@@ -113,7 +113,7 @@ export default class OrderListScreen extends React.Component {
                 </View>
 
             </>
-        )
+        );
     }
 }
 
@@ -148,5 +148,6 @@ const styles = StyleSheet.create({
     backButton: {
         fontSize: 20,
         marginTop: 30,
+        left: 10
     },
 });

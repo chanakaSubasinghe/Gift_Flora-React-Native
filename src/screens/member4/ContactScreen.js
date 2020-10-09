@@ -56,7 +56,7 @@ export default class ContactScreen extends React.Component {
                         <TouchableOpacity
                             title="Submit"
                             onPress={() => this.props.navigation.navigate("")}
-                            style={{ width: 200, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, marginLeft: 30, marginTop: 30 }}>
+                            style={{ width: 200, backgroundColor: '#007bff', borderRadius: 28, paddingVertical: 10, alignSelf: 'center', marginTop: 30 }}>
                             <       Text style={{ fontSize: 18, fontWeight: '500', color: '#ffffff', textAlign: "center", fontWeight: 'bold' }} >Submit</Text>
                         </TouchableOpacity>
 
@@ -90,7 +90,7 @@ export default class ContactScreen extends React.Component {
                     </View>
                 </View>
             </>
-        )
+        );
     }
 }
 
@@ -128,5 +128,6 @@ const styles = StyleSheet.create({
     backButton: {
         fontSize: 20,
         marginTop: 30,
+        left: 10
     },
 });

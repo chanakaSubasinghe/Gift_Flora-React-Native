@@ -18,18 +18,13 @@ export default class ShoppingCartScreen extends React.Component {
             <>
                 <ScrollView>
                     <View style={{ top: Platform.OS === 'android' && StatusBar.currentHeight }}>
-                        <TouchableOpacity
-                            title="Login"
-                            onPress={() => this.props.navigation.navigate("Home")}>
-                            <Text style={styles.backButton}>{`< Back`}</Text>
-                        </TouchableOpacity>
                         <View style={{ alignItems: 'center' }}>
-                            <Text style={{ fontSize: 28, marginTop: 5, fontWeight: 'bold' }}>Shopping Cart</Text>
+                            <Text style={{ fontSize: 28, marginTop: 30, fontWeight: 'bold' }}>Shopping Cart</Text>
                         </View>
 
-                        <View style={{ marginTop: 20, backgroundColor: '#dddddd', width: '105%', height: 20 }} />
+                        <View style={{ marginTop: 10, backgroundColor: '#dddddd', width: '105%', height: 5 }} />
 
-                        <View style={{ flexDirection: 'row', marginTop: 20 }}>
+                        <View style={{ flexDirection: 'row', marginTop: 10 }}>
                             <Image style={{ width: 30, height: 30, marginLeft: 20, marginTop: 60 }} source={require('../../assets/close.png')} />
                             <View style={styles.popularContainer} >
                                 <Image style={{ width: 90, height: 90, marginLeft: 15, marginTop: 20 }} source={require('../../assets/choco.jpg')} />
@@ -42,9 +37,9 @@ export default class ShoppingCartScreen extends React.Component {
                         </View>
 
 
-                        <View style={{ marginTop: 20, backgroundColor: '#dddddd', width: '105%', height: 20 }} />
+                        <View style={{ marginTop: 20, backgroundColor: '#dddddd', width: '105%', height: 5 }} />
 
-                        <View style={{ flexDirection: 'row', marginTop: 20 }}>
+                        <View style={{ flexDirection: 'row', marginTop: 10 }}>
                             <Image style={{ width: 30, height: 30, marginLeft: 20, marginTop: 60 }} source={require('../../assets/close.png')} />
                             <View style={styles.popularContainer} >
                                 <Image style={{ width: 90, height: 90, marginLeft: 15, marginTop: 20 }} source={require('../../assets/ross.jpg')} />
@@ -57,19 +52,19 @@ export default class ShoppingCartScreen extends React.Component {
                         </View>
 
 
-                        <View style={{ marginTop: 20, backgroundColor: '#dddddd', width: '105%', height: 20 }} />
+                        <View style={{ marginTop: 20, backgroundColor: '#dddddd', width: '105%', height: 10 }} />
 
                         <TouchableOpacity
                             title="Submit"
                             onPress={() => this.props.navigation.navigate("AddAddress")}
-                            style={{ width: 300, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, marginLeft: 35, marginTop: 20 }}>
+                            style={{ width: 300, backgroundColor: '#007bff', borderRadius: 28, paddingVertical: 10, marginLeft: 35, marginTop: 50 }}>
                             <       Text style={{ fontSize: 15, fontWeight: '500', color: '#ffffff', textAlign: "center", fontWeight: 'bold' }} >Billing Address</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity
                             title="Submit"
                             onPress={() => this.props.navigation.navigate("AddAddress")}
-                            style={{ width: 300, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, marginLeft: 35, marginTop: 10 }}>
+                            style={{ width: 300, backgroundColor: '#28a745', borderRadius: 28, paddingVertical: 10, marginLeft: 35, marginTop: 30 }}>
                             <       Text style={{ fontSize: 15, fontWeight: '500', color: '#ffffff', textAlign: "center", fontWeight: 'bold' }} >Delivery Address</Text>
                         </TouchableOpacity>
                     </View>
@@ -103,7 +98,7 @@ export default class ShoppingCartScreen extends React.Component {
                     </View>
                 </View>
             </>
-        )
+        );
     }
 }
 
@@ -139,5 +134,6 @@ const styles = StyleSheet.create({
     backButton: {
         fontSize: 20,
         marginTop: 30,
+        left: 10
     },
 });

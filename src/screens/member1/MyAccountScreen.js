@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, StatusBar, TextInput, TouchableOpacity, Platform, Image, TouchableWithoutFeedback, ScrollView } from 'react-native';
-import { } from 'react-navigation'
+import { } from 'react-navigation';
 
 import userIcon from '../../assets/user.png';
 import homeIcon from '../../assets/home.png';
@@ -155,7 +155,7 @@ export default class MyAccountScreen extends React.Component {
             </>
 
 
-        )
+        );
     }
 }
 
@@ -163,6 +163,7 @@ const styles = StyleSheet.create({
     backButton: {
         fontSize: 20,
         marginTop: 30,
+        left: 10
 
     },
     popularContainer: {

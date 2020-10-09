@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar, TouchableOpacity, ScrollView, Platform } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
-import { } from 'react-navigation'
 
 export default class AddAddressScreen extends React.Component {
 
@@ -14,6 +13,13 @@ export default class AddAddressScreen extends React.Component {
             <ScrollView>
                 <View>
                     <View style={{ marginHorizontal: 20, top: Platform.OS === 'android' && StatusBar.currentHeight }}>
+
+                        <TouchableOpacity
+                            title="Login"
+                            onPress={() => this.props.navigation.navigate("ShoppingCart")}>
+                            <Text style={styles.backButton}>{`< Back`}</Text>
+                        </TouchableOpacity>
+
                         <View style={{ alignItems: 'center', marginTop: 10 }}>
                             <Text style={{ fontSize: 28, marginTop: 10, fontWeight: 'bold' }}>Add New Address</Text>
                         </View>
@@ -64,17 +70,17 @@ export default class AddAddressScreen extends React.Component {
                                 <TextInput style={styles.userInput} />
                             </View>
 
-                            <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 10 }}>
+                            <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 30, left: 15 }}>
                                 <TouchableOpacity
                                     title="ShoppingCart"
                                     onPress={() => this.props.navigation.navigate("ShoppingCart")}
-                                    style={{ width: 100, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginLeft: 20 }}>
+                                    style={{ width: 100, backgroundColor: '#000', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginLeft: 20 }}>
                                     <       Text style={{ fontSize: 14, fontWeight: 'bold', color: '#ffffff', textAlign: "center" }} >Cancel</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity
                                     title="MyAddress"
                                     onPress={() => this.props.navigation.navigate("MyAddress")}
-                                    style={{ width: 100, backgroundColor: '#df5e88', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginLeft: 80 }}>
+                                    style={{ width: 100, backgroundColor: '#007bff', borderRadius: 28, paddingVertical: 10, alignItems: 'center', marginLeft: 80 }}>
                                     <Text style={{ fontSize: 14, fontWeight: 'bold', color: '#ffffff', textAlign: "center" }} >Save</Text>
                                 </TouchableOpacity>
                             </View>
@@ -83,8 +89,8 @@ export default class AddAddressScreen extends React.Component {
                     </View>
                     <View style={{ height: 80 }}></View>
                 </View>
-            </ScrollView>
-        )
+            </ScrollView >
+        );
     }
 }
 const styles = StyleSheet.create({
@@ -99,5 +105,10 @@ const styles = StyleSheet.create({
         paddingHorizontal: 16,
         fontSize: 16,
         marginBottom: 5
+    },
+    backButton: {
+        fontSize: 20,
+        marginTop: 30,
+        left: 5
     },
 });
