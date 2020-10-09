@@ -13,6 +13,43 @@ export default class LoginScreen extends React.Component {
         title: "Login",
     };
 
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            username: "",
+            password: "",
+            message: ""
+        };
+
+        this.onUsername = this.onUsername.bind(this);
+        this.onPassword = this.onPassword.bind(this);
+        this.onLogin = this.onLogin.bind(this);
+    }
+
+    onUsername(e) {
+        this.setState({
+            username: e.nativeEvent.text
+        });
+    }
+
+    onPassword(e) {
+        this.setState({
+            password: e.nativeEvent.text
+        });
+    }
+
+    onLogin() {
+
+        if (this.state.username.length === 0 || this.state.password.length === 0) {
+            this.setState({
+                message: "provide valid username and password"
+            });
+        } else {
+            this.props.navigation.navigate("Home");
+        }
+    }
     render() {
         return (
             <>
@@ -20,20 +57,20 @@ export default class LoginScreen extends React.Component {
                 <View style={styles.container}>
 
                     <View style={styles.welcomeContainer}>
-                        <Text style={styles.welcomeText}>Welcome Back !</Text>
+                        <Text style={styles.welcomeText}>Welcome {this.state.username}</Text>
                         <Logo />
                     </View>
-
+                    <Text style={styles.message}>{this.state.message}</Text>
                     {/* Username */}
                     <View>
                         <Text style={styles.label}>Username</Text>
-                        <TextInput style={styles.userInput} />
+                        <TextInput style={styles.userInput} onChange={this.onUsername} />
                     </View>
 
                     {/* Password */}
                     <View>
                         <Text style={styles.label}>Password</Text>
-                        <TextInput style={styles.userInput} minLength={5} maxLength={15} secureTextEntry={true} />
+                        <TextInput style={styles.userInput} onChange={this.onPassword} secureTextEntry={true} />
                     </View>
 
 
@@ -41,7 +78,7 @@ export default class LoginScreen extends React.Component {
                     <View style={styles.loginArea}>
                         <TouchableOpacity style={styles.loginButtonContainer}
                             title="Home"
-                            onPress={() => this.props.navigation.navigate("Home")}>
+                            onPress={this.onLogin}>
                             <Text style={styles.loginText} >LOGIN</Text>
                         </TouchableOpacity>
                         {/* Forgot Screen Button */}
@@ -154,7 +191,7 @@ const styles = StyleSheet.create({
     },
     registerArea: {
         alignItems: 'center',
-        marginTop: 120,
+        marginTop: 70,
         justifyContent: 'center',
         flexDirection: 'row'
     },
@@ -175,6 +212,12 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         color: '#ffffff',
         textAlign: "center"
+    },
+    message: {
+        alignSelf: 'center',
+        marginTop: 20,
+        fontSize: 20,
+        color: 'red'
     },
     navBar: {
         flex: 1,

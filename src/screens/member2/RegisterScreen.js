@@ -13,41 +13,89 @@ export default class LoginScreen extends React.Component {
     static navigationOptions = {
         title: "Sign Up",
     };
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            username: "",
+            email: "",
+            password: "",
+            message: ""
+        };
+
+        this.onUsername = this.onUsername.bind(this);
+        this.onPassword = this.onPassword.bind(this);
+        this.onEmail = this.onEmail.bind(this);
+        this.onRegister = this.onRegister.bind(this);
+    }
+
+    onUsername(e) {
+        this.setState({
+            username: e.nativeEvent.text
+        });
+    }
+
+    onPassword(e) {
+        this.setState({
+            password: e.nativeEvent.text
+        });
+    }
+
+    onEmail(e) {
+        this.setState({
+            email: e.nativeEvent.text
+        });
+    }
+
+    onRegister() {
+        if (this.state.username.length === 0 || this.state.password.length === 0) {
+            this.setState({
+                message: "provide valid username and password"
+            });
+        } else if (this.state.email.length === 0 || !this.state.email.includes("@")) {
+            this.setState({
+                message: "provide valid email"
+            });
+        } else {
+            this.props.navigation.navigate("Home");
+        }
+    }
     render() {
         return (
-
             <>
                 <View style={styles.container}>
-
 
                     <View style={styles.welcomeContainer}>
                         <Text style={styles.welcomeText}> Welcome !</Text>
                         <Logo />
                     </View>
 
+                    <Text style={styles.message}>{this.state.message}</Text>
+
                     {/* Username */}
                     <View>
                         <Text style={styles.textLabel}>Username</Text>
-                        <TextInput style={styles.textInput} />
+                        <TextInput style={styles.textInput} onChange={this.onUsername} />
 
                     </View>
 
                     {/* E-mail */}
                     <View>
                         <Text style={styles.textLabel}>E-mail</Text>
-                        <TextInput style={styles.textInput} />
+                        <TextInput style={styles.textInput} onChange={this.onEmail} />
                     </View>
 
                     {/* Password */}
                     <View>
                         <Text style={styles.textLabel}>Password</Text>
-                        <TextInput style={styles.textInput} minLength={5} maxLength={15} secureTextEntry={true} />
+                        <TextInput style={styles.textInput} onChange={this.onPassword} secureTextEntry={true} />
                     </View>
 
 
                     {/* SignUp button*/}
                     <View style={styles.registerArea}>
-                        <TouchableOpacity style={styles.registerContainer}>
+                        <TouchableOpacity style={styles.registerContainer} onPress={this.onRegister}>
                             <Text style={styles.registerText} >SIGN UP</Text>
                         </TouchableOpacity>
 
@@ -160,6 +208,12 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         color: '#ffffff',
         textAlign: "center"
+    },
+    message: {
+        alignSelf: 'center',
+        marginTop: 20,
+        fontSize: 20,
+        color: 'red'
     },
     navBar: {
         flex: 1,
